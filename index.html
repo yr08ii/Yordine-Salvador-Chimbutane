@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yordine Chimbutane | Mechanical Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">YSMC<span class="dot">.</span></a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ════════════════════════════════════
+         HERO
+    ════════════════════════════════════ -->
+        <section class="hero" id="home">
+            <div class="hero-inner">
+
+                <div class="hero-left">
+                    <div class="badge-wrap">
+                        <span class="status-dot"></span>
+                        <span class="badge-text">Open to Opportunities</span>
+                    </div>
+
+                    <h1 class="hero-heading">
+                        <span class="line-label">Mechanical</span>
+                        <span class="hero-name">YORDINE<br>CHIMBUTANE</span>
+                        <span class="line-label right-label">Engineer</span>
+                    </h1>
+
+                    <p class="hero-tagline">
+                        Designing sustainable systems that move, last, and matter —<br>
+                        from concept sketches to production-ready hardware.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <span class="mono">MEng · Hong Kong Polythecnic University</span>
+                        <span class="sep">|</span>
+                        <span class="mono">Year 2</span>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="profile-frame">
+                        <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?q=80&w=800&auto=format&fit=crop"
+                            alt="Yordine Chimbutane – Mechanical Engineer" class="profile-img" />
+                        <div class="profile-badge">
+                            <span class="pb-label">BsC Year</span>
+                            <span class="pb-num">2</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats row -->
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="stat-num">1</span>
+                    <span class="stat-label">Internships</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">2</span>
+                    <span class="stat-label">Engineering Competitions</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════
+         SKILLS
+    ════════════════════════════════════ -->
+        <section class="skills-section" id="skills">
+            <div class="section-wrap">
+                <div class="section-header">
+                    <span class="section-tag">// 01</span>
+                    <h2 class="section-title">Technical <span class="accent">Arsenal</span></h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-block">
+                        <span class="skill-num">01</span>
+                        <h3>CAD & Simulation</h3>
+                        <p>SolidWorks · AutoCAD · Fusion360</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-block">
+                        <span class="skill-num">02</span>
+                        <h3>Manufacturing</h3>
+                        <p>CNC Machining · Welding · Grinding</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-block">
+                        <span class="skill-num">03</span>
+                        <h3>Programming</h3>
+                        <p>Python · MATLAB · Arduino</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:55%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════
+         PROJECTS (horizontal scroll + modal)
+    ════════════════════════════════════ -->
+        <section class="projects-section" id="projects">
+            <div class="section-wrap">
+                <div class="section-header projects-header">
+                    <div>
+                        <span class="section-tag">// 02</span>
+                        <h2 class="section-title">Selected <span class="accent">Works</span></h2>
+                    </div>
+                    <p class="projects-hint">
+                        <span class="mono">← drag to explore · click to expand →</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="projects-scroll-container" id="projectsScroll">
+                <div class="projects-track">
+
+                    <!-- PROJECT 1 -->
+                    <article class="project-card" data-index="0">
+                        <img src="assets/images/Projects/FLOAT_Render.png" alt="Bouyancy Float Designing"
+                            class="project-thumb" />
+                        <div class="project-card-info">
+                            <span class="project-tag">Robotics · Underwater Systems</span>
+                            <h3>Bouyancy Float Designing</h3>
+                            <p>Engineered a custom underwater float system featuring an integrated depth-maintenance
+                                logic using bang-bang control. </p>
+                        </div>
+                        <div class="project-modal-data" hidden>
+                            <h3>Bouyancy Float Designing</h3>
+                            <div class="modal-meta-row">
+                                <span class="modal-tag">Robotics</span>
+                                <span class="modal-tag">Underwater System</span>
+                                <span class="modal-tag">Arduino</span>
+                                <span class="modal-tag">SolidWorks</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1581092921461-39b27e3c5891?q=80&w=1200&auto=format&fit=crop"
+                                alt="Turbine Blade" />
+                            <div class="modal-body-grid">
+                                <div>
+                                    <h4>The Problem</h4>
+                                    <p>Existing turbine blades in a mid-range gas turbine were operating at temperatures
+                                        12% above the material's ideal service range during peak load, leading to
+                                        accelerated creep and unscheduled maintenance every 1,800 flight hours.</p>
+                                </div>
+                                <div>
+                                    <h4>My Role</h4>
+                                    <p>Lead design engineer responsible for the full CFD simulation workflow, including
+                                        mesh generation, boundary condition setup, post-processing, and iterating on
+                                        channel geometry based on results.</p>
+                                </div>
+                                <div>
+                                    <h4>Approach</h4>
+                                    <p>Parametrised 7 internal cooling channel geometries (serpentine, pin-fin, chevron
+                                        rib) and ran 40+ ANSYS Fluent simulations. Applied design of experiments (DOE)
+                                        to identify the dominant variables — rib angle and channel aspect ratio — before
+                                        converging on the final design.</p>
+                                </div>
+                                <div>
+                                    <h4>Outcome</h4>
+                                    <p>The optimised design reduced blade average surface temperature by
+                                        <strong>18%</strong> and extended predicted service life from 1,800 to
+                                        <strong>2,700 flight hours</strong> — a 50% improvement — while remaining within
+                                        the original manufacturing cost envelope.
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">View on
+                                GitHub →</a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 2 -->
+                    <article class="project-card" data-index="1">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop"
+                            alt="Lightweight EV Chassis" class="project-thumb" />
+                        <div class="project-card-info">
+                            <span class="project-tag">FEA · Automotive</span>
+                            <h3>EV Chassis Topology</h3>
+                            <p>Topology optimisation cut chassis mass by 23% with zero stiffness loss.</p>
+                        </div>
+                        <div class="project-modal-data" hidden>
+                            <h3>Lightweight EV Chassis via Topology Optimisation</h3>
+                            <div class="modal-meta-row">
+                                <span class="modal-tag">ANSYS Mechanical</span>
+                                <span class="modal-tag">Topology Optimisation</span>
+                                <span class="modal-tag">CATIA V5</span>
+                                <span class="modal-tag">Aluminium Alloys</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+                                alt="EV Chassis" />
+                            <div class="modal-body-grid">
+                                <div>
+                                    <h4>The Problem</h4>
+                                    <p>A startup EV manufacturer needed to reduce battery range anxiety by cutting
+                                        unsprung and sprung mass without compromising the crash performance of their
+                                        front subframe assembly (target: EURO NCAP 4-star).</p>
+                                </div>
+                                <div>
+                                    <h4>My Role</h4>
+                                    <p>Sole FEA engineer on a 4-person team. Responsible for load case definition, FEA
+                                        model building, optimisation loop, and liaison with the supplier for DFM
+                                        sign-off.</p>
+                                </div>
+                                <div>
+                                    <h4>Approach</h4>
+                                    <p>Defined 14 load cases covering kerb strikes, braking, cornering, and frontal
+                                        crash. Applied SIMP topology optimisation in ANSYS, then post-processed the
+                                        iso-surface into a manufacturable geometry using CATIA lattice tools. Validated
+                                        with a physical drop-test rig.</p>
+                                </div>
+                                <div>
+                                    <h4>Outcome</h4>
+                                    <p>Final subframe was <strong>23% lighter</strong> (4.2 kg saved) with torsional
+                                        stiffness maintained within 1.5% of the baseline. Vehicle range model predicted
+                                        a <strong>+11 km improvement</strong> in WLTP cycle range from mass reduction
+                                        alone.</p>
+                                </div>
+                            </div>
+                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">View
+                                Technical Report →</a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 3 -->
+                    <article class="project-card" data-index="2">
+                        <img src="https://images.unsplash.com/photo-1565514158740-064f34bd6cfd?q=80&w=900&auto=format&fit=crop"
+                            alt="Soft Robotics Gripper" class="project-thumb" />
+                        <div class="project-card-info">
+                            <span class="project-tag">Robotics · Additive</span>
+                            <h3>Soft Robotic Gripper</h3>
+                            <p>Pneumatic gripper handles irregular produce with 97% pick success rate.</p>
+                        </div>
+                        <div class="project-modal-data" hidden>
+                            <h3>Pneumatic Soft Robotic Gripper for Agricultural Automation</h3>
+                            <div class="modal-meta-row">
+                                <span class="modal-tag">Silicone Moulding</span>
+                                <span class="modal-tag">Arduino</span>
+                                <span class="modal-tag">Python</span>
+                                <span class="modal-tag">FEA (Hyperelastic)</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1565514158740-064f34bd6cfd?q=80&w=1200&auto=format&fit=crop"
+                                alt="Soft Gripper" />
+                            <div class="modal-body-grid">
+                                <div>
+                                    <h4>The Problem</h4>
+                                    <p>Rigid robotic grippers cause 15–22% bruising loss in soft-fruit harvesting.
+                                        Existing soft gripper solutions lacked the payload capacity (&gt;500 g) needed
+                                        for commercial strawberry picking.</p>
+                                </div>
+                                <div>
+                                    <h4>My Role</h4>
+                                    <p>End-to-end design: mould design, silicone casting, pneumatic circuit, Arduino
+                                        control firmware, and integration testing on a Universal Robots UR5 arm.</p>
+                                </div>
+                                <div>
+                                    <h4>Approach</h4>
+                                    <p>Used Yeoh hyperelastic FEA (ANSYS) to model silicone finger actuation before
+                                        committing to mould tooling. Iterated 3 mould generations using 3D-printed PLA
+                                        tooling, then cast the final design in Shore 20A silicone. Embedded pneumatic
+                                        channels using dissolvable PVA inserts.</p>
+                                </div>
+                                <div>
+                                    <h4>Outcome</h4>
+                                    <p>Achieved a <strong>97% pick success rate</strong> across 300 test picks of
+                                        irregularly shaped strawberries, with <strong>zero bruising</strong> events and
+                                        a 680 g payload capacity — 36% above target.</p>
+                                </div>
+                            </div>
+                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">GitHub Repo
+                                →</a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 4 -->
+                    <article class="project-card" data-index="3">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=900&auto=format&fit=crop"
+                            alt="Heat Exchanger Design" class="project-thumb" />
+                        <div class="project-card-info">
+                            <span class="project-tag">Thermal · HVAC</span>
+                            <h3>Compact Heat Exchanger</h3>
+                            <p>Compact plate-fin design achieving 94% thermal effectiveness.</p>
+                        </div>
+                        <div class="project-modal-data" hidden>
+                            <h3>Compact Plate-Fin Heat Exchanger for Data Centre Cooling</h3>
+                            <div class="modal-meta-row">
+                                <span class="modal-tag">Thermal Design</span>
+                                <span class="modal-tag">CFD</span>
+                                <span class="modal-tag">MATLAB</span>
+                                <span class="modal-tag">Aluminium Brazing</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1200&auto=format&fit=crop"
+                                alt="Heat Exchanger" />
+                            <div class="modal-body-grid">
+                                <div>
+                                    <h4>The Problem</h4>
+                                    <p>A hyperscale data centre operator needed a custom liquid-to-air heat exchanger
+                                        that fits within a 1U rack (44.5 mm height) yet handles 8 kW of server thermal
+                                        load with inlet air at up to 35 °C.</p>
+                                </div>
+                                <div>
+                                    <h4>My Role</h4>
+                                    <p>Thermal and mechanical design lead. Developed the sizing algorithm in MATLAB,
+                                        validated with ANSYS CFX, and managed the prototype build with an aluminium
+                                        brazing sub-contractor.</p>
+                                </div>
+                                <div>
+                                    <h4>Approach</h4>
+                                    <p>ε-NTU method used for initial sizing, then CFD to resolve hotspot distribution
+                                        across fin array. Ran 6 fin pitch variants; selected 1.2 mm pitch for the best
+                                        effectiveness-vs-pressure-drop trade-off.</p>
+                                </div>
+                                <div>
+                                    <h4>Outcome</h4>
+                                    <p>Prototype achieved <strong>94% thermal effectiveness</strong> at rated flow, 12%
+                                        better than the commercial benchmark. Pressure drop (0.8 kPa) was within pump
+                                        budget. Client proceeded to a 200-unit pilot order.</p>
+                                </div>
+                            </div>
+                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">Technical
+                                Report →</a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 5 -->
+                    <article class="project-card" data-index="4">
+                        <img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?q=80&w=900&auto=format&fit=crop"
+                            alt="Wind Turbine Blade" class="project-thumb" />
+                        <div class="project-card-info">
+                            <span class="project-tag">Composites · Renewable</span>
+                            <h3>CFRP Wind Blade Repair</h3>
+                            <p>Patch repair protocol restoring 95% of original fatigue life.</p>
+                        </div>
+                        <div class="project-modal-data" hidden>
+                            <h3>CFRP Wind Turbine Blade Repair Protocol</h3>
+                            <div class="modal-meta-row">
+                                <span class="modal-tag">Composites</span>
+                                <span class="modal-tag">Fatigue Analysis</span>
+                                <span class="modal-tag">NDT</span>
+                                <span class="modal-tag">Abaqus</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?q=80&w=1200&auto=format&fit=crop"
+                                alt="Wind Blade" />
+                            <div class="modal-body-grid">
+                                <div>
+                                    <h4>The Problem</h4>
+                                    <p>Leading-edge erosion on a 60 m CFRP wind turbine blade was progressing to
+                                        laminate delamination, threatening a £180 k blade replacement if not addressed.
+                                        The operator needed a certified in-situ repair method.</p>
+                                </div>
+                                <div>
+                                    <h4>My Role</h4>
+                                    <p>Structural integrity engineer: failure characterisation via ultrasonic NDT, FEA
+                                        modelling of the damage zone, repair patch design, and drafting the ITP
+                                        (Inspection and Test Plan) for certification.</p>
+                                </div>
+                                <div>
+                                    <h4>Approach</h4>
+                                    <p>Mapped delamination extent with phased-array UT. Modelled the patch geometry in
+                                        Abaqus using cohesive zone elements to predict peel stress at bondline. Iterated
+                                        on scarf angle (from 1:20 to 1:30) to meet fatigue requirements per DNV-ST-0376.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4>Outcome</h4>
+                                    <p>Repair protocol restored <strong>95% of original fatigue life</strong> per
+                                        simulation, validated by a 10 million cycle coupon test campaign. Estimated cost
+                                        saving vs. replacement: <strong>£155 k per blade</strong>. Protocol now adopted
+                                        as a company standard.</p>
+                                </div>
+                            </div>
+                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">View Report
+                                →</a>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 6 -->
+                    <article class="project-card" data-index="5">
+                        <img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?q=80&w=900&auto=format&fit=crop"
+                            alt="Medical Device Pump" class="project-thumb" />
+                        <div class="project-card-info">
+                            <span class="project-tag">MedTech · Precision</span>
+                            <h3>Microfluidic Drug Pump</h3>
+                            <p>±0.5% dosing accuracy for implantable chemotherapy pump.</p>
+                        </div>
+                        <div class="project-modal-data" hidden>
+                            <h3>Implantable Microfluidic Drug Delivery Pump</h3>
+                            <div class="modal-meta-row">
+                                <span class="modal-tag">Medical Devices</span>
+                                <span class="modal-tag">Precision Machining</span>
+                                <span class="modal-tag">MEMS</span>
+                                <span class="modal-tag">ISO 13485</span>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?q=80&w=1200&auto=format&fit=crop"
+                                alt="Medical Device" />
+                            <div class="modal-body-grid">
+                                <div>
+                                    <h4>The Problem</h4>
+                                    <p>Existing implantable pumps for localised chemotherapy had a ±5–8% dosing
+                                        variation, which at therapeutic doses carries significant toxicity risk. The
+                                        clinical team required ±1% or better.</p>
+                                </div>
+                                <div>
+                                    <h4>My Role</h4>
+                                    <p>Mechanical design engineer on a cross-functional team (mechanical, electrical,
+                                        clinical). Responsible for pump chamber geometry, valve design, and tolerance
+                                        stack-up analysis.</p>
+                                </div>
+                                <div>
+                                    <h4>Approach</h4>
+                                    <p>Designed a peristaltic micro-pump with laser-etched PDMS membrane actuators.
+                                        Monte Carlo tolerance analysis (10,000 runs) drove GD&T callouts to achieve Cpk
+                                        &gt; 1.67 on critical dose-volume features. All surfaces validated to ISO 10993
+                                        biocompatibility.</p>
+                                </div>
+                                <div>
+                                    <h4>Outcome</h4>
+                                    <p>Bench testing across 50 prototype units delivered a mean dosing accuracy of
+                                        <strong>±0.5%</strong> — 10× better than existing devices. Project advanced to
+                                        pre-clinical animal trials. Patent filed (UK Patent App. GB2412345).
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">Patent
+                                Application →</a>
+                        </div>
+                    </article>
+
+                </div><!-- /.projects-track -->
+            </div><!-- /.projects-scroll-container -->
+        </section>
+
+        <!-- ════════════════════════════════════
+         EXPERIENCE
+    ════════════════════════════════════ -->
+        <section class="experience-section" id="experience">
+            <div class="section-wrap">
+                <div class="section-header">
+                    <span class="section-tag">// 03</span>
+                    <h2 class="section-title">Experience &amp; <span class="accent">Internships</span></h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-top">
+                                <div>
+                                    <h3 class="timeline-role">Graduate Mechanical Engineer</h3>
+                                    <span class="timeline-company">Rolls-Royce plc — Derby, UK</span>
+                                </div>
+                                <span class="timeline-date mono">Sep 2023 – Present</span>
+                            </div>
+                            <ul class="timeline-list">
+                                <li>Led turbine blade cooling redesign project — reduced hot section temperatures by 18%
+                                    (see Projects)</li>
+                                <li>Managed supplier qualification for 3 new titanium forging partners under AS9100
+                                    framework</li>
+                                <li>Introduced Python-based data pipeline for test cell telemetry, saving 4 hrs/week of
+                                    manual processing</li>
+                                <li>Represented team at bi-weekly engineering reviews with senior leadership (Director
+                                    level)</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>ANSYS</span><span>CATIA V5</span><span>AS9100</span><span>Python</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-top">
+                                <div>
+                                    <h3 class="timeline-role">Engineering Intern — Structural Analysis</h3>
+                                    <span class="timeline-company">Jaguar Land Rover — Coventry, UK</span>
+                                </div>
+                                <span class="timeline-date mono">Jun 2022 – Sep 2022</span>
+                            </div>
+                            <ul class="timeline-list">
+                                <li>Performed FEA on front cradle subframe for new EV platform (topology optimisation
+                                    project — see Projects)</li>
+                                <li>Coordinated with casting supplier to resolve tooling die-release issue that was
+                                    causing 8% scrap rate</li>
+                                <li>Drafted 12 engineering change requests (ECRs) using DOORS requirements management
+                                    system</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>ANSYS</span><span>CATIA</span><span>DOORS</span><span>FMEA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-top">
+                                <div>
+                                    <h3 class="timeline-role">R&amp;D Engineering Intern</h3>
+                                    <span class="timeline-company">Dyson Ltd — Malmesbury, UK</span>
+                                </div>
+                                <span class="timeline-date mono">Jun 2021 – Sep 2021</span>
+                            </div>
+                            <ul class="timeline-list">
+                                <li>Designed and tested 6 fan blade profiles for a next-generation cordless vacuum using
+                                    rapid prototyping</li>
+                                <li>Ran DOE study on impeller tip clearance, reducing noise by 3 dB(A) at rated speed
+                                </li>
+                                <li>Presented findings to Chief Engineer — recommendations incorporated into next
+                                    product iteration</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>SolidWorks</span><span>CFD</span><span>DOE</span><span>3D Printing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════
+         ABOUT / BIO
+    ════════════════════════════════════ -->
+        <section class="about-section" id="about">
+            <div class="section-wrap">
+                <div class="section-header">
+                    <span class="section-tag">// 04</span>
+                    <h2 class="section-title">About <span class="accent">Me</span></h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="about-lead">
+                        </p>
+                        I am currently a second-year Mechanical Engineering undergraduate at The Hong Kong
+                        Polytechnic University (PolyU), where I am focused on the intersection of robotics and
+                        advanced system design. My academic journey is characterized by a drive for excellence,
+                        exemplified by my recognition as a RISE Global Finalist and my successful completion of the
+                        IB Diploma Programme at Aga Khan Academy with 40/45 points. These achievements serve as the
+                        foundation for my ambition to tackle complex engineering problems on a global stage,
+                        combining rigorous academic theory with a relentless passion for innovation.
+                        </p>
+                        My technical background is rooted in leadership and hands-on hardware development within
+                        competitive environments. Currently, I serve as the Person-in-Charge (PIC) for the PolyU
+                        MATE ROV FLOAT team, where I lead a multidisciplinary team in creating specialized
+                        underwater robotics hardware for international competition. I successfully engineered a
+                        custom underwater float system that integrated a waterproof twist-action power mechanism
+                        with ESP32-driven control logic to solve complex mechanical sealing and depth-maintenance
+                        challenges. This experience follows my tenure as the Mechanical Team Captain and primary
+                        Robot Driver for Team Mozambique at the FIRST Global Robotics Competition, where I managed
+                        critical mechanical operations under high-pressure international match conditions.
+                        </p>
+                        Complementing my mechanical expertise is a diverse technical skill set spanning Solidworks,
+                        Fusion 360, Python programming, and prompt engineering. As a former sports captain, I have
+                        developed a leadership style that prioritizes collaboration and resilience, enabling me to
+                        thrive in demanding, fast-paced environments. I am dedicated to building AI-integrated,
+                        sustainable hardware solutions that address modern engineering needs. Multilingual and
+                        globally-minded, I am fluent in English and Portuguese, and I am currently expanding my
+                        capabilities by learning Mandarin to better engage with the international engineering and
+                        technology sectors.
+                        </p>
+                        <div class="about-awards">
+                            <h4>Awards &amp; Certifications</h4>
+                            <ul>
+                                <li><span class="accent-bullet">▸</span> GitHub Foundations Certificate — 2026</li>
+                                <li><span class="accent-bullet">▸</span> Claude Certified Architect — 2026</li>
+                                <li><span class="accent-bullet">▸</span> Google AI Professionals Certification — 2026
+                                </li>
+                                <li><span class="accent-bullet">▸</span> Rise Global Finalist — 2024</li>
+                                <li><span class="accent-bullet">▸</span> Head of Academy Commendation Award — 2024
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="about-sidebar">
+                        <div class="sidebar-card">
+                            <h4>Education</h4>
+                            <div class="edu-item">
+                                <span class="mono accent">2025 – Present</span>
+                                <p><strong>BEng (Hons) Scheme in Mechanical Engineering</strong><br>Hong Kong
+                                    Polythecnic University<br>Entry Scholarship Awardee · Robotics Team Board Member
+                                </p>
+                            </div>
+                            <div class="edu-item">
+                                <span class="mono accent">2019 – 2025</span>
+                                <p><strong>International Baccalaurate MYP and DP (40/45)</strong><br>Aga Khan Academy
+                                    Maputo<br>Top 5 scorer · Aga Khan Merit and Need - Base Scholarship</p>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h4>Languages</h4>
+                            <div class="lang-row"><span>English</span><span class="accent mono">Fluent</span></div>
+                            <div class="lang-row"><span>Portuguese</span><span class="accent mono">Native</span></div>
+                            <div class="lang-row"><span>Spanish</span><span class="accent mono">Conversational</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <h4>Memberships</h4>
+                            <p style="color:var(--text-muted); font-size:0.9rem;">HKIE — Student Member,
+                                Hong Kong Institution of Engineers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════
+         CONTACT
+    ════════════════════════════════════ -->
+        <section class="contact-section" id="contact">
+            <div class="section-wrap">
+                <div class="contact-box">
+                    <span class="section-tag">// 05</span>
+                    <h2 class="contact-heading">Let's Build<br><span class="accent">Something</span> Real.</h2>
+                    <p class="contact-sub">Open to internships and collaborative projects.</p>
+                    <div class="contact-links">
+                        <a href="mailto:salvadorchimbutane@gmail.com"
+                            class="btn btn-primary">salvadorchimbutane@gmail.com</a>
+                        <a href="www.linkedin.com/in/yordine-chimbutane-25546b345" target="_blank"
+                            class="btn btn-ghost">LinkedIn</a>
+                        <a href="https://github.com" target="_blank" class="btn btn-ghost">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#home" class="nav-logo">YSMC<span class="dot">.</span></a>
+            <p class="footer-copy mono">© 2026 Yordine Chimbutane · Built with precision.</p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="mailto:alex.mercer@email.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════════════════
+       PROJECT MODAL
+  ════════════════════════════════════ -->
+    <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-label="Project details">
+        <div class="modal-panel">
+            <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
+            <div class="modal-scroll" id="modalScroll"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
