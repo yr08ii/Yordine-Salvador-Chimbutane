@@ -166,8 +166,14 @@
                 </div>
             </div>
 
+            <!-- ─── SMART SCROLL WRAPPER ───────────────────────────────
+                 • On desktop with few cards: track stays left-aligned,
+                   no stretching, natural gap layout.
+                 • Once cards overflow the viewport the container scrolls.
+                 • On mobile: single-row scroll, cards ~80vw wide.
+            ──────────────────────────────────────────────────────── -->
             <div class="projects-scroll-container" id="projectsScroll">
-                <div class="projects-track">
+                <div class="projects-track" id="projectsTrack">
 
                     <!-- PROJECT 1 -->
                     <article class="project-card" data-index="0">
@@ -175,106 +181,75 @@
                             class="project-thumb" />
                         <div class="project-card-info">
                             <span class="project-tag">Robotics · Underwater Systems</span>
-                            <h3>Bouyancy Float Designing</h3>
-                            <p>Engineered a custom underwater float system featuring an integrated depth-maintenance
-                                logic using bang-bang control. </p>
+                            <h3>Buoyancy Float Design</h3>
+                            <p>Engineered a custom underwater float system featuring integrated depth-maintenance
+                                logic using bang-bang control.</p>
                         </div>
+                        <!-- Hidden case-study data — cloned into the canvas by JS -->
                         <div class="project-modal-data" hidden>
-                            <h3>Bouyancy Float Designing</h3>
+                            <h3>Buoyancy Float Designing</h3>
                             <div class="modal-meta-row">
                                 <span class="modal-tag">Robotics</span>
                                 <span class="modal-tag">Underwater System</span>
                                 <span class="modal-tag">Arduino</span>
                                 <span class="modal-tag">SolidWorks</span>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1581092921461-39b27e3c5891?q=80&w=1200&auto=format&fit=crop"
-                                alt="Turbine Blade" />
+                            <img src="assets/images/Projects/floatteampic.jpeg" alt="Buoyancy Float project" />
                             <div class="modal-body-grid">
                                 <div>
-                                    <h4>The Problem</h4>
-                                    <p>Existing turbine blades in a mid-range gas turbine were operating at temperatures
-                                        12% above the material's ideal service range during peak load, leading to
-                                        accelerated creep and unscheduled maintenance every 1,800 flight hours.</p>
+                                    <h4>WHAT</h4>
+                                    <p>I designed and built an autonomous underwater buoyancy engine—a motorized ballast
+                                        system that automatically alters its internal volume to precisely control its
+                                        depth. Instead of constantly running heavy-drain thrusters to fight water
+                                        currents and stay level, this system acts as the primary stability mechanism for
+                                        the underwater robot (ROV), allowing it to maintain a precise depth while
+                                        drastically optimizing battery efficiency.</p>
                                 </div>
                                 <div>
                                     <h4>My Role</h4>
-                                    <p>Lead design engineer responsible for the full CFD simulation workflow, including
-                                        mesh generation, boundary condition setup, post-processing, and iterating on
-                                        channel geometry based on results.</p>
+                                    <p>Person-in-Charge (PIC) — responsible for the full engineering lifecycle from
+                                        CAD concept in Fusion 360 through fabrication, electronics integration, and
+                                        competition-day operations.</p>
                                 </div>
                                 <div>
-                                    <h4>Approach</h4>
-                                    <p>Parametrised 7 internal cooling channel geometries (serpentine, pin-fin, chevron
-                                        rib) and ran 40+ ANSYS Fluent simulations. Applied design of experiments (DOE)
-                                        to identify the dominant variables — rib angle and channel aspect ratio — before
-                                        converging on the final design.</p>
+                                    <h4>HOW</h4>
+                                    <p>To bring this system from concept to a functional, deployment-ready prototype, I
+                                        owned the mechanical, electrical, and software engineering loops:
+
+                                        CAD Modeling:
+                                        Using SolidWorks and Fusion 360, I designed the entire physical architecture
+                                        from scratch. This meant modeling high-tolerance watertight enclosures, custom
+                                        O-ring sealing grooves, and an electromechanical twist-action power mechanism to
+                                        guarantee the system would completely resist flooding under intense hydrostatic
+                                        underwater pressure.
+
+                                        Custom PCB Designing: To eliminate a mess of loose wiring
+                                        and minimize the electronic footprint, I developed a custom printed circuit
+                                        board (PCB). This board cleanly distributed power across the hardware and
+                                        directly routed an ESP32 microcontroller to my depth sensors and motor drivers.
+
+                                        C++ & Arduino Programming: I wrote the core control software in C++ using the
+                                        Arduino environment. The software ingested real-time pressure and depth sensor
+                                        data, processed it through an active feedback loop, and sent immediate commands
+                                        to the internal motors to adjust the engine's volume dynamically to fight
+                                        currents and lock depth stability. </p>
                                 </div>
                                 <div>
                                     <h4>Outcome</h4>
-                                    <p>The optimised design reduced blade average surface temperature by
-                                        <strong>18%</strong> and extended predicted service life from 1,800 to
-                                        <strong>2,700 flight hours</strong> — a 50% improvement — while remaining within
-                                        the original manufacturing cost envelope.
+                                    <p>System performed well across all competition runs, contributing to a
+                                        <strong>3rd-place podium finish</strong> at the MATE ROV 2026 Hong Kong
+                                        Regionals. There is potential to further develop this system for real-world
+                                        applications in underwater exploration and research, where efficient depth
+                                        control is critical for long-duration missions.
                                     </p>
                                 </div>
                             </div>
-                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">View on
-                                GitHub →</a>
+                            <a href="https://github.com/yr08ii" target="_blank" class="modal-link btn btn-primary">View
+                                on GitHub →</a>
                         </div>
                     </article>
 
-                    <!-- PROJECT 2 -->
-                    <article class="project-card" data-index="1">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop"
-                            alt="Lightweight EV Chassis" class="project-thumb" />
-                        <div class="project-card-info">
-                            <span class="project-tag">FEA · Automotive</span>
-                            <h3>FIRST Global Robotics Competion Project</h3>
-                            <p>Robot build with one mechanical arm and a gripper for the FIRST GLOBAL ROBOTICS CHALLENGE
-                                2024.</p>
-                        </div>
-                        <div class="project-modal-data" hidden>
-                            <h3>Lightweight EV Chassis via Topology Optimisation</h3>
-                            <div class="modal-meta-row">
-                                <span class="modal-tag">ANSYS Mechanical</span>
-                                <span class="modal-tag">Topology Optimisation</span>
-                                <span class="modal-tag">CATIA V5</span>
-                                <span class="modal-tag">Aluminium Alloys</span>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
-                                alt="EV Chassis" />
-                            <div class="modal-body-grid">
-                                <div>
-                                    <h4>The Problem</h4>
-                                    <p>A startup EV manufacturer needed to reduce battery range anxiety by cutting
-                                        unsprung and sprung mass without compromising the crash performance of their
-                                        front subframe assembly (target: EURO NCAP 4-star).</p>
-                                </div>
-                                <div>
-                                    <h4>My Role</h4>
-                                    <p>Sole FEA engineer on a 4-person team. Responsible for load case definition, FEA
-                                        model building, optimisation loop, and liaison with the supplier for DFM
-                                        sign-off.</p>
-                                </div>
-                                <div>
-                                    <h4>Approach</h4>
-                                    <p>Defined 14 load cases covering kerb strikes, braking, cornering, and frontal
-                                        crash. Applied SIMP topology optimisation in ANSYS, then post-processed the
-                                        iso-surface into a manufacturable geometry using CATIA lattice tools. Validated
-                                        with a physical drop-test rig.</p>
-                                </div>
-                                <div>
-                                    <h4>Outcome</h4>
-                                    <p>Final subframe was <strong>23% lighter</strong> (4.2 kg saved) with torsional
-                                        stiffness maintained within 1.5% of the baseline. Vehicle range model predicted
-                                        a <strong>+11 km improvement</strong> in WLTP cycle range from mass reduction
-                                        alone.</p>
-                                </div>
-                            </div>
-                            <a href="https://github.com" target="_blank" class="modal-link btn btn-primary">View
-                                Technical Report →</a>
-                        </div>
-                    </article>
+
 
                 </div><!-- /.projects-track -->
             </div><!-- /.projects-scroll-container -->
@@ -541,7 +516,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <a href="#home" class="nav-logo">YSMC<span class="dot">.</span></a>
-            <p class="footer-copy mono">© 2026 Yordine Chimbutane · Built with precision.</p>
+            <p class="footer-copy mono">© 2026 Yordine Salvador Matuele Chimbutane</p>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/in/yordine-chimbutane-25546b345" target="_blank">LinkedIn</a>
                 <a href="https://github.com/yr08ii" target="_blank">GitHub</a>
@@ -551,12 +526,19 @@
     </footer>
 
     <!-- ════════════════════════════════════
-       PROJECT MODAL
+       PROJECT CASE-STUDY CANVAS
+       Deliberate margin on all sides so the
+       dark site behind frames the canvas.
   ════════════════════════════════════ -->
-    <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-label="Project details">
-        <div class="modal-panel">
-            <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
-            <div class="modal-scroll" id="modalScroll"></div>
+    <div class="canvas-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-label="Project case study">
+        <!-- Clicking the dark framing edge closes -->
+        <div class="canvas-frame">
+            <div class="canvas-panel">
+                <button class="canvas-close" id="modalClose" aria-label="Close project">
+                    <span>&#x2715;</span>
+                </button>
+                <div class="canvas-body" id="modalScroll"></div>
+            </div>
         </div>
     </div>
 

@@ -553,7 +553,19 @@ li {
 }
 
 /* ═══════════════════════════════════════════════
-   PROJECTS — HORIZONTAL SCROLL
+   PROJECTS — SMART HORIZONTAL SCROLL
+   
+   Strategy:
+   • The scroll container is always overflow-x:auto
+     and momentum-enabled.
+   • The inner track uses inline-flex so cards sit
+     naturally left-aligned and only grow the track
+     when there are enough cards to overflow.
+   • On desktop the container is max-width capped so
+     a small card count sits flush-left with normal
+     gaps — no stretching or centering of the track.
+   • On mobile cards become ~80vw so the next card
+     peeks through on the right.
 ═══════════════════════════════════════════════ */
 .projects-section {
     padding: 110px 0;
@@ -575,51 +587,62 @@ li {
     padding-bottom: 8px;
 }
 
+/* ── Scroll container ── */
 .projects-scroll-container {
+    /* Extend edge-to-edge for the scroll track, but
+       keep content aligned to the section's left edge */
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 8px 32px 36px;
+
     overflow-x: auto;
-    padding: 0 32px 36px;
-    cursor: grab;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;   /* proximity = snaps without forcing */
+    cursor: grab;
+
+    /* Thin accent scrollbar */
     scrollbar-width: thin;
-    scrollbar-color: var(--accent) transparent;
+    scrollbar-color: var(--accent) rgba(255,255,255,0.04);
 }
 
-.projects-scroll-container::-webkit-scrollbar {
-    height: 4px;
-}
-
-.projects-scroll-container::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.projects-scroll-container::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    border-radius: 2px;
-}
+.projects-scroll-container::-webkit-scrollbar       { height: 3px; }
+.projects-scroll-container::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 2px; }
+.projects-scroll-container::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
 .projects-scroll-container.is-dragging {
     cursor: grabbing;
     user-select: none;
+    scroll-snap-type: none; /* disable snap while drag-scrolling */
 }
 
+/* ── Inner track ──
+   inline-flex  → track is exactly as wide as its cards + gaps,
+   never wider.  Cards left-align naturally.
+   On desktop with 2–3 cards this means the track won't fill the
+   container width, so there's no temptation to stretch cards. */
 .projects-track {
-    display: flex;
+    display: inline-flex;   /* key: shrink-wraps to card content */
     gap: 24px;
-    width: max-content;
-    padding: 8px 0 4px;
+    padding: 4px 0 8px;
+    vertical-align: top;
 }
 
+/* ── Cards ── */
 .project-card {
+    /* Fixed width on desktop; overridden to 80vw on mobile */
     width: 340px;
     flex-shrink: 0;
+
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
     cursor: pointer;
     scroll-snap-align: start;
-    transition: border-color 0.3s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    transition:
+        border-color 0.3s var(--ease),
+        transform    0.35s var(--ease),
+        box-shadow   0.35s var(--ease);
     position: relative;
 }
 
@@ -643,23 +666,19 @@ li {
     filter: grayscale(0%) brightness(1);
 }
 
-/* Orange overlay on hover */
+/* Accent overlay on hover */
 .project-card::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 220px;
-    background: rgba(255, 95, 31, 0.18);
+    background: rgba(215, 38, 38, 0.16);   /* accent tint */
     opacity: 0;
     transition: opacity 0.35s var(--ease);
     pointer-events: none;
 }
 
-.project-card:hover::after {
-    opacity: 1;
-}
+.project-card:hover::after { opacity: 1; }
 
 .project-card-info {
     padding: 24px 26px 28px;
@@ -688,103 +707,148 @@ li {
     line-height: 1.55;
 }
 
-/* Hidden data slot */
-.project-modal-data {
-    display: none;
-}
+/* Hidden data slot — JS reads innerHTML */
+.project-modal-data { display: none; }
 
 /* ═══════════════════════════════════════════════
-   MODAL
+   CASE-STUDY FLOATING CANVAS
+   
+   Visual intent: a premium document floats over
+   the darkened site. Deliberate margin on T/L/R
+   leaves the background visible as a framing edge,
+   making the overlay feel placed — not painted over.
 ═══════════════════════════════════════════════ */
-.modal-overlay {
+
+/* ── Backdrop (the darkened framing layer) ── */
+.canvas-backdrop {
     position: fixed;
     inset: 0;
     z-index: 9000;
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+
+    /* Start invisible; JS adds .is-open */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.35s var(--ease), visibility 0.35s var(--ease);
+    transition:
+        opacity     0.35s var(--ease),
+        visibility  0.35s var(--ease);
+
+    /* Clicking the backdrop area closes */
+    cursor: pointer;
 }
 
-.modal-overlay.is-open {
+.canvas-backdrop.is-open {
     opacity: 1;
     visibility: visible;
 }
 
-.modal-panel {
-    background: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
+/* Dark, slightly-blurred framing background */
+.canvas-backdrop::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* ── Frame: positions the canvas with margins ── */
+.canvas-frame {
+    position: absolute;
+    /* T/L/R deliberate margins; bottom auto lets
+       content height determine canvas height */
+    top: 5vh;
+    left: 5vw;
+    right: 5vw;
+    bottom: 5vh;
+
+    display: flex;
+    align-items: stretch;
+    pointer-events: none; /* backdrop click-through; panel re-enables */
+}
+
+/* ── The actual canvas panel ── */
+.canvas-panel {
+    pointer-events: all;   /* re-enable clicks inside panel */
+    cursor: default;       /* reset cursor from backdrop's grab */
+
     width: 100%;
-    max-width: 860px;
-    max-height: 88vh;
-    position: relative;
-    overflow: hidden;
-    transform: scale(0.92) translateY(20px);
-    transition: transform 0.4s var(--ease-spring);
+    background: var(--bg-card-2);          /* #1A1A1A */
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 28px;                   /* large round corners all sides */
+    box-shadow:
+        0 40px 100px rgba(0,0,0,0.7),
+        0  0   0 1px rgba(255,255,255,0.04) inset;
+
     display: flex;
     flex-direction: column;
+    overflow: hidden;                      /* clip children to rounded corners */
+
+    /* Entry animation */
+    transform: translateY(28px) scale(0.96);
+    transition: transform 0.45s var(--ease-spring);
 }
 
-.modal-overlay.is-open .modal-panel {
-    transform: scale(1) translateY(0);
+.canvas-backdrop.is-open .canvas-panel {
+    transform: translateY(0) scale(1);
 }
 
-.modal-scroll {
-    overflow-y: auto;
-    padding: 52px 52px 52px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-}
-
-.modal-scroll::-webkit-scrollbar {
-    width: 4px;
-}
-
-.modal-scroll::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 2px;
-}
-
-.modal-close {
+/* ── Close button ── */
+.canvas-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 22px;
+    right: 24px;
     z-index: 10;
-    background: var(--bg-card-2);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    width: 40px;
-    height: 40px;
+
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    font-size: 1rem;
+    border: 1.5px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    font-size: 1.1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.25s var(--ease);
-    line-height: 1;
+
+    /* Ensure it always sits on top of scrolling content */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-.modal-close:hover {
+.canvas-close:hover {
     background: var(--accent);
     border-color: var(--accent);
     color: #fff;
+    transform: rotate(90deg) scale(1.1);
 }
 
-/* Modal inner content (injected by JS) */
-#modalScroll h3 {
+/* ── Scrollable content area ── */
+.canvas-body {
+    flex: 1;                   /* fill panel height */
+    overflow-y: auto;          /* independent scroll — page never moves */
+    padding: 56px 60px 60px;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.canvas-body::-webkit-scrollbar       { width: 4px; }
+.canvas-body::-webkit-scrollbar-track { background: transparent; }
+.canvas-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+
+/* Scroll-lock: body must not scroll behind the canvas */
+body.modal-open { overflow: hidden; }
+
+/* ── Content injected by JS (mirrors old #modalScroll rules) ── */
+.canvas-body h3 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
     letter-spacing: 0.05em;
     color: var(--text);
     margin-bottom: 20px;
+    line-height: 1;
 }
 
 .modal-meta-row {
@@ -805,19 +869,19 @@ li {
     background: var(--accent-dim);
 }
 
-#modalScroll img {
+.canvas-body img {
     width: 100%;
     border-radius: var(--radius);
-    aspect-ratio: 16/7;
+    aspect-ratio: 16 / 7;
     object-fit: cover;
     margin-bottom: 36px;
-    filter: brightness(0.85);
+    filter: brightness(0.82);
 }
 
 .modal-body-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    gap: 32px;
     margin-bottom: 36px;
 }
 
@@ -833,21 +897,12 @@ li {
 .modal-body-grid p {
     font-size: 0.9rem;
     color: var(--text-muted);
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
-.modal-body-grid strong {
-    color: var(--text);
-    font-weight: 500;
-}
+.modal-body-grid strong { color: var(--text); font-weight: 500; }
 
-.modal-link {
-    margin-top: 8px;
-}
-
-body.modal-open {
-    overflow: hidden;
-}
+.modal-link { margin-top: 8px; }
 
 /* ═══════════════════════════════════════════════
    EXPERIENCE / TIMELINE
@@ -1260,13 +1315,16 @@ body.modal-open {
         width: 40px;
     }
 
-    .modal-body-grid {
-        grid-template-columns: 1fr;
+    /* Canvas on smaller tablets */
+    .canvas-frame {
+        top: 4vh;
+        left: 4vw;
+        right: 4vw;
+        bottom: 4vh;
     }
 
-    .modal-scroll {
-        padding: 48px 28px;
-    }
+    .canvas-body { padding: 48px 32px 48px; }
+    .modal-body-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -1337,6 +1395,22 @@ body.modal-open {
         transform: translateY(-7px) rotate(-45deg);
     }
 
+    /* Canvas: near full-screen on mobile */
+    .canvas-frame {
+        top: 2vh;
+        left: 2vw;
+        right: 2vw;
+        bottom: 2vh;
+    }
+
+    .canvas-panel { border-radius: 20px; }
+    .canvas-body  { padding: 52px 22px 32px; }
+
+    /* Cards ~80vw so next card peeks through */
+    .project-card { width: 80vw; }
+
+    .projects-scroll-container { padding: 8px 20px 28px; }
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
@@ -1360,14 +1434,6 @@ body.modal-open {
 @media (max-width: 480px) {
     .section-wrap {
         padding: 0 20px;
-    }
-
-    .projects-scroll-container {
-        padding: 0 20px 28px;
-    }
-
-    .project-card {
-        width: 280px;
     }
 
     .stat {
