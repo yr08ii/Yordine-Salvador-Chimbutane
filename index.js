@@ -1,167 +1,194 @@
 /**
  * index.js — Portfolio interactivity
  *
- * Responsibilities:
- *  1. Project cards → floating canvas case-study overlay
- *     · open on click (card or any child)
- *     · close via ✕ button / Escape key / clicking the dark framing backdrop
- *  2. Drag-to-scroll on the horizontal projects track
- *  3. Navbar scroll-state class for future styling hooks
+ *  1. Project cards → case-study overlay (open, close, focus management)
+ *  2. Drag-to-scroll on the horizontal projects rail
+ *  3. Navbar scroll state
+ *  4. Mobile menu dismissal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ─── Element references ───────────────────────────────── */
-  const backdrop     = document.getElementById('projectModal');   // .canvas-backdrop
-  const canvasBody   = document.getElementById('modalScroll');    // .canvas-body
-  const closeBtn     = document.getElementById('modalClose');     // .canvas-close
-  const projectCards = document.querySelectorAll('.project-card');
-  const scrollTrack  = document.getElementById('projectsScroll'); // .projects-scroll-container
+    /* ═══ 1. CASE-STUDY OVERLAY ═══════════════════════════════ */
 
-  /* Guard — if essential elements are missing, bail gracefully */
-  if (!backdrop || !canvasBody || !closeBtn) return;
+    const backdrop = document.getElementById('projectModal');
+    const canvasBody = document.getElementById('modalScroll');
+    const closeBtn = document.getElementById('modalClose');
+    const panel = backdrop && backdrop.querySelector('.canvas-panel');
+    const projectCards = document.querySelectorAll('.project-card');
 
-  /* ─── 1. CANVAS OPEN / CLOSE ───────────────────────────── */
+    if (backdrop && canvasBody && closeBtn && panel) {
 
-  /**
-   * openCanvas(card)
-   * Reads the hidden `.project-modal-data` inside a card,
-   * injects its HTML into the canvas body, then reveals the overlay.
-   */
-  function openCanvas(card) {
-    const dataEl = card.querySelector('.project-modal-data');
-    if (!dataEl) return;
+        /* Element that had focus before opening, so we can restore it on close. */
+        let lastFocused = null;
 
-    // Clone so we never disturb the source DOM
-    canvasBody.innerHTML = dataEl.innerHTML;
+        const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-    // Reveal
-    backdrop.classList.add('is-open');
-    document.body.classList.add('modal-open');
+        function openCanvas(card) {
+            const data = card.querySelector('.project-modal-data');
+            if (!data) return;
 
-    // Return focus to close button for accessibility
-    closeBtn.focus();
-  }
+            lastFocused = document.activeElement;
+            canvasBody.innerHTML = data.innerHTML;
+            canvasBody.scrollTop = 0;
 
-  /**
-   * closeCanvas()
-   * Hides the overlay. Content is cleared after the CSS transition
-   * finishes so there's no flash of empty panel during the fade-out.
-   */
-  function closeCanvas() {
-    backdrop.classList.remove('is-open');
-    document.body.classList.remove('modal-open');
+            backdrop.hidden = false;
+            /* Force a reflow so the opacity transition runs from its start value. */
+            void backdrop.offsetWidth;
+            backdrop.classList.add('is-open');
+            document.body.classList.add('modal-open');
 
-    // Wait for opacity transition (350 ms) before clearing content
-    setTimeout(() => {
-      canvasBody.innerHTML = '';
-    }, 380);
-  }
+            /* The stylesheet flips visibility with no delay on open, so the
+               close button is focusable immediately. */
+            closeBtn.focus();
+        }
 
-  /* Wire up project cards */
-  projectCards.forEach(card => {
-    card.addEventListener('click', () => openCanvas(card));
+        function closeCanvas() {
+            if (!backdrop.classList.contains('is-open')) return;
 
-    // Keyboard accessibility — open with Enter / Space
-    card.setAttribute('tabindex', '0');
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openCanvas(card);
-      }
-    });
-  });
+            backdrop.classList.remove('is-open');
+            document.body.classList.remove('modal-open');
 
-  /* Close button */
-  closeBtn.addEventListener('click', closeCanvas);
+            if (lastFocused) lastFocused.focus();
 
-  /* Escape key */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && backdrop.classList.contains('is-open')) {
-      closeCanvas();
+            /* Clear content once the fade-out has finished. */
+            window.setTimeout(() => {
+                if (!backdrop.classList.contains('is-open')) {
+                    backdrop.hidden = true;
+                    canvasBody.innerHTML = '';
+                }
+            }, 320);
+        }
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => openCanvas(card));
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openCanvas(card);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', closeCanvas);
+
+        /* Clicking the framing area — anything outside the panel — closes. */
+        backdrop.addEventListener('click', e => {
+            if (!panel.contains(e.target)) closeCanvas();
+        });
+
+        /* Escape closes; Tab is trapped inside the panel while open. */
+        document.addEventListener('keydown', e => {
+            if (!backdrop.classList.contains('is-open')) return;
+
+            if (e.key === 'Escape') {
+                closeCanvas();
+                return;
+            }
+
+            if (e.key !== 'Tab') return;
+
+            const items = Array.from(panel.querySelectorAll(FOCUSABLE))
+                .filter(el => el.offsetParent !== null);
+            if (!items.length) return;
+
+            const first = items[0];
+            const last = items[items.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
     }
-  });
-
-  /**
-   * Click on the dark framing backdrop closes the canvas.
-   * We must NOT close when the click lands inside .canvas-panel —
-   * use the `.canvas-frame` / `.canvas-backdrop::before` as the
-   * hit target by checking that the click target is the backdrop
-   * itself or its pseudo-element container (the backdrop div).
-   *
-   * Because ::before is not a real DOM node, any click that
-   * bubbles up to .canvas-backdrop without passing through
-   * .canvas-panel counts as a backdrop click.
-   */
-  backdrop.addEventListener('click', e => {
-    // If the click originated inside .canvas-panel, ignore it
-    const panel = backdrop.querySelector('.canvas-panel');
-    if (panel && panel.contains(e.target)) return;
-    closeCanvas();
-  });
 
 
-  /* ─── 2. DRAG-TO-SCROLL ────────────────────────────────── */
+    /* ═══ 2. DRAG-TO-SCROLL RAIL ══════════════════════════════ */
 
-  if (!scrollTrack) return;
+    const rail = document.getElementById('projectsScroll');
 
-  let isDragging = false;
-  let dragStartX = 0;
-  let dragScrollLeft = 0;
-  /* Track total drag distance to distinguish a click from a drag */
-  let dragDistance = 0;
-  const DRAG_THRESHOLD = 6; // px — less than this is treated as a click
+    if (rail) {
+        let isDragging = false;
+        let startX = 0;
+        let startScroll = 0;
+        let dragDistance = 0;
 
-  scrollTrack.addEventListener('mousedown', e => {
-    // Ignore clicks on buttons / links inside cards
-    if (e.target.closest('a, button')) return;
+        /* Below this, the gesture counts as a click rather than a drag. */
+        const DRAG_THRESHOLD = 6;
 
-    isDragging    = true;
-    dragDistance  = 0;
-    dragStartX    = e.pageX - scrollTrack.getBoundingClientRect().left;
-    dragScrollLeft = scrollTrack.scrollLeft;
+        rail.addEventListener('mousedown', e => {
+            /* Left button only, and never on an interactive child. */
+            if (e.button !== 0 || e.target.closest('a, button')) return;
 
-    scrollTrack.classList.add('is-dragging');
-  });
+            isDragging = true;
+            dragDistance = 0;
+            startX = e.pageX;
+            startScroll = rail.scrollLeft;
+        });
 
-  window.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    e.preventDefault();
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
 
-    const x    = e.pageX - scrollTrack.getBoundingClientRect().left;
-    const walk = x - dragStartX;
-    dragDistance = Math.abs(walk);
+            const walk = e.pageX - startX;
+            dragDistance = Math.abs(walk);
 
-    scrollTrack.scrollLeft = dragScrollLeft - walk;
-  });
+            /* Only claim the gesture once it is clearly a drag, so short
+               presses still behave like clicks and text stays selectable. */
+            if (dragDistance > DRAG_THRESHOLD) {
+                e.preventDefault();
+                rail.classList.add('is-dragging');
+                rail.scrollLeft = startScroll - walk;
+            }
+        });
 
-  window.addEventListener('mouseup', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    scrollTrack.classList.remove('is-dragging');
-  });
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            rail.classList.remove('is-dragging');
+        });
 
-  /**
-   * Prevent card click from firing when the user was drag-scrolling.
-   * We intercept the click event during capture phase on the track;
-   * if a meaningful drag occurred we stop propagation.
-   */
-  scrollTrack.addEventListener('click', e => {
-    if (dragDistance > DRAG_THRESHOLD) {
-      e.stopPropagation();
-      dragDistance = 0;
+        /* Swallow the click that ends a drag, so releasing over a card
+           does not also open its case study. */
+        rail.addEventListener('click', e => {
+            if (dragDistance > DRAG_THRESHOLD) {
+                e.stopPropagation();
+                e.preventDefault();
+                dragDistance = 0;
+            }
+        }, true);
+
+        /* Keep the native drag-image from appearing when dragging over images. */
+        rail.addEventListener('dragstart', e => e.preventDefault());
     }
-  }, true /* capture */);
 
 
-  /* ─── 3. NAVBAR SCROLL STATE ───────────────────────────── */
+    /* ═══ 3. NAVBAR SCROLL STATE ══════════════════════════════ */
 
-  const navbar = document.getElementById('navbar');
-  if (navbar) {
-    const onScroll = () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
+    const navbar = document.getElementById('navbar');
+
+    if (navbar) {
+        const onScroll = () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 24);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+
+    /* ═══ 4. MOBILE MENU ══════════════════════════════════════ */
+
+    const menuToggle = document.getElementById('menu-toggle');
+
+    if (menuToggle) {
+        /* Close the menu after following an in-page link. */
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.checked = false;
+            });
+        });
+    }
 
 });

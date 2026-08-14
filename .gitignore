@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Photoshop file used for editing the pictures — large, not needed to serve the site
+*.psd
+
+# Editor
+.vscode/
+.idea/

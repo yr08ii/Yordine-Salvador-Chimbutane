@@ -4,538 +4,657 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yordine Chimbutane | Mechanical Engineering Student</title>
+    <title>Yordine Chimbutane — Mechanical Engineering Student</title>
+    <meta name="description"
+        content="Mechanical engineering student at Hong Kong PolyU. Underwater robotics, embedded control, and off-grid energy hardware." />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..600;1,9..40,300..500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet" />
 </head>
 
 <body>
 
-    <!-- ════════════════════════════════════
-       NAVIGATION
-  ════════════════════════════════════ -->
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- ══════════════════ NAVIGATION ══════════════════ -->
     <nav class="navbar" id="navbar">
-        <div class="nav-inner">
+        <div class="nav-inner wrap">
             <a href="#home" class="nav-logo">YSMC<span class="dot">.</span></a>
 
-            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <input type="checkbox" id="menu-toggle" class="menu-toggle visually-hidden" />
             <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </label>
 
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="Yordine%20Resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
                 <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main>
+    <main id="main">
 
-        <!-- ════════════════════════════════════
-         HERO
-    ════════════════════════════════════ -->
-        <section class="hero" id="home">
+        <!-- ══════════════════ HERO ══════════════════ -->
+        <section class="hero wrap" id="home">
             <div class="hero-inner">
 
                 <div class="hero-left">
                     <div class="badge-wrap">
                         <span class="status-dot"></span>
-                        <span class="badge-text">Open to Opportunities</span>
+                        <span class="badge-text">Open to internships</span>
                     </div>
 
                     <h1 class="hero-heading">
-                        <span class="line-label">Mechanical</span>
-                        <span class="hero-name">YORDINE<br>CHIMBUTANE</span>
-                        <span class="line-label right-label">Engineering Student</span>
+                        <span class="given">Yordine</span>
+                        <span class="family">Chimbutane</span>
                     </h1>
 
                     <p class="hero-tagline">
-                        Passionate about creating innovative solutions.<br>
+                        Mechanical engineering student at PolyU.
                     </p>
 
                     <div class="hero-btns">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+                        <a href="#projects" class="btn btn-primary">View projects</a>
+                        <a href="Yordine%20Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Résumé
+                            (PDF)</a>
                     </div>
 
-                    <div class="hero-meta">
-                        <span class="mono">MEng · Hong Kong Polythecnic University</span>
-                        <span class="sep">|</span>
-                        <span class="mono">Year 2</span>
+                    <div class="hero-meta mono">
+                        <span>BEng (Hons) Mechanical Engineering · PolyU</span>
+                        <span class="sep">/</span>
+                        <span>Class of 2029</span>
+                        <span class="sep">/</span>
+                        <span>Hong Kong SAR</span>
                     </div>
                 </div>
 
                 <div class="hero-right">
                     <div class="profile-frame">
-                        <img src="assets/images/Projects/HeroImagePortfolio.png"
-                            alt="Yordine Chimbutane – Mechanical Engineer" class="profile-img" />
-                        <div class="profile-badge">
-                            <span class="pb-label">BsC Year</span>
-                            <span class="pb-num">2</span>
-                        </div>
+                        <img src="assets/hero-portrait.png" width="1469" height="1600"
+                            alt="Yordine Chimbutane, shown three times: in formal dress, in workshop coveralls, and machining in a welding apron"
+                            class="profile-img" />
                     </div>
                 </div>
 
             </div>
-
-            <!-- Stats row -->
-            <div class="stats-row">
-                <div class="stat">
-                    <span class="stat-num">1</span>
-                    <span class="stat-label">Internships</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">2</span>
-                    <span class="stat-label">Engineering Competitions</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">4</span>
-                    <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">4</span>
-                    <span class="stat-label">Certifications</span>
-                </div>
-            </div>
         </section>
 
-        <!-- ════════════════════════════════════
-         SKILLS
-    ════════════════════════════════════ -->
-        <section class="skills-section" id="skills">
-            <div class="section-wrap">
+        <!-- ══════════════════ PROJECTS ══════════════════ -->
+        <section class="section" id="projects">
+            <div class="wrap">
                 <div class="section-header">
-                    <span class="section-tag">// 01</span>
-                    <h2 class="section-title">Technical <span class="accent">Arsenal</span></h2>
-                </div>
-
-                <div class="skills-grid">
-                    <div class="skill-block">
-                        <span class="skill-num">01</span>
-                        <h3>CAD & Simulation</h3>
-                        <p>SolidWorks · AutoCAD · Fusion360</p>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:92%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-block">
-                        <span class="skill-num">02</span>
-                        <h3>Manufacturing</h3>
-                        <p>CNC Machining · Welding · Grinding</p>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-block">
-                        <span class="skill-num">03</span>
-                        <h3>Programming</h3>
-                        <p>Python · MATLAB · Arduino</p>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width:55%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ════════════════════════════════════
-         PROJECTS (horizontal scroll + modal)
-    ════════════════════════════════════ -->
-        <section class="projects-section" id="projects">
-            <div class="section-wrap">
-                <div class="section-header projects-header">
                     <div>
-                        <span class="section-tag">// 02</span>
-                        <h2 class="section-title">Selected <span class="accent">Works</span></h2>
+                        <span class="section-tag">01 / 04</span>
+                        <h2 class="section-title">Selected <em>works</em></h2>
                     </div>
-                    <p class="projects-hint">
-                        <span class="mono">← drag to explore · click to expand →</span>
-                    </p>
+                    <p class="section-note mono">Drag to scroll · click to open</p>
                 </div>
             </div>
 
-            <!-- ─── SMART SCROLL WRAPPER ───────────────────────────────
-                 • On desktop with few cards: track stays left-aligned,
-                   no stretching, natural gap layout.
-                 • Once cards overflow the viewport the container scrolls.
-                 • On mobile: single-row scroll, cards ~80vw wide.
-            ──────────────────────────────────────────────────────── -->
-            <div class="projects-scroll-container" id="projectsScroll">
-                <div class="projects-track" id="projectsTrack">
+            <div class="projects-scroll" id="projectsScroll">
 
-                    <!-- PROJECT 1 -->
-                    <article class="project-card" data-index="0">
-                        <img src="assets/images/Projects/FLOAT_Render.png" alt="Bouyancy Float Designing"
-                            class="project-thumb" />
-                        <div class="project-card-info">
-                            <span class="project-tag">Robotics · Underwater Systems</span>
-                            <h3>Buoyancy Float Design</h3>
-                            <p>Engineered a custom underwater float system featuring integrated depth-maintenance
-                                logic using bang-bang control.</p>
+                <!-- ─── FLOAT v2 ─────────────────────────────── -->
+                <article class="project-card" role="button" tabindex="0" aria-haspopup="dialog">
+                    <div class="project-thumb-frame">
+                        <img src="assets/Projects/FLOAT/product.png" alt="Buoyancy float assembly, second generation"
+                            class="project-thumb" loading="lazy" />
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-tag">Underwater robotics</span>
+                        <h3>Buoyancy Float — Second Generation</h3>
+                        <p>Rebuilt for serviceability: single-panel access, port-side charging, and a 10S pack sized to
+                            the actuator's 12&nbsp;V operating point.</p>
+                        <span class="project-open mono">Case study <span class="arrow">→</span></span>
+                    </div>
+
+                    <div class="project-modal-data" hidden>
+                        <span class="case-eyebrow">Underwater robotics</span>
+                        <h3>Buoyancy Float — Second Generation</h3>
+
+                        <div class="case-meta">
+                            <span>SolidWorks</span><span>Fusion 360</span><span>ESP32</span><span>C++</span><span>PCB
+                                design</span>
                         </div>
-                        <!-- Hidden case-study data — cloned into the canvas by JS -->
-                        <div class="project-modal-data" hidden>
-                            <h3>Buoyancy Float Designing</h3>
-                            <div class="modal-meta-row">
-                                <span class="modal-tag">Robotics</span>
-                                <span class="modal-tag">Underwater System</span>
-                                <span class="modal-tag">Arduino</span>
-                                <span class="modal-tag">SolidWorks</span>
+
+                        <dl class="case-facts">
+                            <div>
+                                <dt>Role</dt>
+                                <dd>Person-in-Charge</dd>
                             </div>
-                            <img src="assets/images/Projects/floatteampic.jpeg" alt="Buoyancy Float project" />
-                            <div class="modal-body-grid">
-                                <div>
-                                    <h4>WHAT</h4>
-                                    <p>I designed and built an autonomous underwater buoyancy engine—a motorized ballast
-                                        system that automatically alters its internal volume to precisely control its
-                                        depth. Instead of constantly running heavy-drain thrusters to fight water
-                                        currents and stay level, this system acts as the primary stability mechanism for
-                                        the underwater robot (ROV), allowing it to maintain a precise depth while
-                                        drastically optimizing battery efficiency.</p>
-                                </div>
-                                <div>
-                                    <h4>My Role</h4>
-                                    <p>Person-in-Charge (PIC) — responsible for the full engineering lifecycle from
-                                        CAD concept in Fusion 360 through fabrication, electronics integration, and
-                                        competition-day operations.</p>
-                                </div>
-                                <div>
-                                    <h4>HOW</h4>
-                                    <p>To bring this system from concept to a functional, deployment-ready prototype, I
-                                        owned the mechanical, electrical, and software engineering loops:
-
-                                        CAD Modeling:
-                                        Using SolidWorks and Fusion 360, I designed the entire physical architecture
-                                        from scratch. This meant modeling high-tolerance watertight enclosures, custom
-                                        O-ring sealing grooves, and an electromechanical twist-action power mechanism to
-                                        guarantee the system would completely resist flooding under intense hydrostatic
-                                        underwater pressure.
-
-                                        Custom PCB Designing: To eliminate a mess of loose wiring
-                                        and minimize the electronic footprint, I developed a custom printed circuit
-                                        board (PCB). This board cleanly distributed power across the hardware and
-                                        directly routed an ESP32 microcontroller to my depth sensors and motor drivers.
-
-                                        C++ & Arduino Programming: I wrote the core control software in C++ using the
-                                        Arduino environment. The software ingested real-time pressure and depth sensor
-                                        data, processed it through an active feedback loop, and sent immediate commands
-                                        to the internal motors to adjust the engine's volume dynamically to fight
-                                        currents and lock depth stability. </p>
-                                </div>
-                                <div>
-                                    <h4>Outcome</h4>
-                                    <p>System performed well across all competition runs, contributing to a
-                                        <strong>3rd-place podium finish</strong> at the MATE ROV 2026 Hong Kong
-                                        Regionals. There is potential to further develop this system for real-world
-                                        applications in underwater exploration and research, where efficient depth
-                                        control is critical for long-duration missions.
-                                    </p>
-                                </div>
+                            <div>
+                                <dt>Team</dt>
+                                <dd>MantaRay PolyU</dd>
                             </div>
-                            <a href="https://github.com/yr08ii" target="_blank" class="modal-link btn btn-primary">View
-                                on GitHub →</a>
+                            <div>
+                                <dt>Timeline</dt>
+                                <dd>Dec 2025 – present</dd>
+                            </div>
+                            <div>
+                                <dt>Status</dt>
+                                <dd>In development</dd>
+                            </div>
+                        </dl>
+
+                        <img src="assets/Projects/FLOAT/team.jpeg" alt="Buoyancy float team at work" class="case-hero"
+                            loading="lazy" />
+
+                        <div class="case-block">
+                            <h4>Problem</h4>
+                            <ul>
+                                <li>Reaching any critical component meant removing five to eight screws, so routine
+                                    maintenance was slow.</li>
+                                <li>Recharging required pulling the battery pack, which broke the waterproof seal on
+                                    every cycle and put the enclosure's integrity at risk.</li>
+                            </ul>
                         </div>
-                    </article>
 
+                        <div class="case-block">
+                            <h4>What changed</h4>
+                            <ul>
+                                <li><strong>Sealed charging.</strong> Redesigned the PCB to route charge current from an
+                                    external port to the onboard cells. The hull now stays closed between runs.</li>
+                                <li><strong>Repacked the battery.</strong> Replaced the 8S2P arrangement with ten cells
+                                    in series, holding the actuator at the 12&nbsp;V it needs while keeping current
+                                    headroom.</li>
+                                <li><strong>Access.</strong> Reorganised the internal layout so serviceable components
+                                    sit behind a single panel.</li>
+                            </ul>
+                        </div>
 
+                        <div class="case-block">
+                            <h4>Next</h4>
+                            <p>In development for the 2027 MATE ROV season, targeting full points on the float task.</p>
+                        </div>
 
-                </div><!-- /.projects-track -->
-            </div><!-- /.projects-scroll-container -->
+                        <div class="case-links">
+                            <a href="https://github.com/yr08ii" target="_blank" rel="noopener"
+                                class="btn btn-ghost">GitHub
+                                →</a>
+                        </div>
+
+                        <!-- No photos in assets/gallery/float yet — drop images there and add a
+                             .case-gallery block here, matching the FIRST Global one below. -->
+                    </div>
+                </article>
+
+                <!-- ─── FLOAT v1 ─────────────────────────────── -->
+                <article class="project-card" role="button" tabindex="0" aria-haspopup="dialog">
+                    <div class="project-thumb-frame">
+                        <img src="assets/Projects/FLOAT/product.png" alt="Buoyancy float, first build"
+                            class="project-thumb" loading="lazy" />
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-tag">Underwater robotics</span>
+                        <h3>Buoyancy Float — First Build</h3>
+                        <p>Autonomous ballast engine that holds depth by changing displacement instead of running
+                            thrusters. Third place, MATE ROV 2026 Hong Kong Regionals.</p>
+                        <span class="project-open mono">Case study <span class="arrow">→</span></span>
+                    </div>
+
+                    <div class="project-modal-data" hidden>
+                        <span class="case-eyebrow">Underwater robotics</span>
+                        <h3>Buoyancy Float — First Build</h3>
+
+                        <div class="case-meta">
+                            <span>SolidWorks</span><span>Fusion 360</span><span>ESP32</span><span>C++ /
+                                Arduino</span><span>PCB design</span>
+                        </div>
+
+                        <dl class="case-facts">
+                            <div>
+                                <dt>Role</dt>
+                                <dd>Person-in-Charge</dd>
+                            </div>
+                            <div>
+                                <dt>Team</dt>
+                                <dd>MantaRay PolyU</dd>
+                            </div>
+                            <div>
+                                <dt>Timeline</dt>
+                                <dd>Sep – Dec 2025</dd>
+                            </div>
+                            <div>
+                                <dt>Result</dt>
+                                <dd>3rd — MATE ROV 2026 HK Regionals</dd>
+                            </div>
+                        </dl>
+
+                        <img src="assets/Projects/FLOAT/team.jpg" alt="Buoyancy float assembly" class="case-hero"
+                            loading="lazy" />
+
+                        <div class="case-block">
+                            <h4>What it does</h4>
+                            <p>A motorised ballast system that changes its internal volume to control depth. Holding
+                                position by displacement rather than by running thrusters removes the constant power
+                                draw of station-keeping, which is what sets the ROV's endurance on a long dive.</p>
+                        </div>
+
+                        <div class="case-block">
+                            <h4>Build</h4>
+                            <ul>
+                                <li><strong>Mechanical.</strong> Watertight enclosure with custom O-ring grooves and a
+                                    twist-action power mechanism, modelled in SolidWorks and Fusion 360 to hold its seal
+                                    under hydrostatic pressure at depth.</li>
+                                <li><strong>Electronics.</strong> Custom PCB distributing power and routing an ESP32 to
+                                    the pressure sensor and motor driver, replacing a loose wiring harness and cutting
+                                    the electronics footprint.</li>
+                                <li><strong>Control.</strong> C++ on Arduino. A bang-bang loop on pressure-derived depth
+                                    drives the ballast motor to hold a setpoint against currents.</li>
+                            </ul>
+                        </div>
+
+                        <div class="case-block">
+                            <h4>Outcome</h4>
+                            <p>Ran through every competition heat without a flood or a reset. Third place at the MATE
+                                ROV
+                                2026 Hong Kong Regionals. The same approach applies to long-duration survey work, where
+                                power spent on depth-keeping is power not spent on the mission.</p>
+                        </div>
+
+                        <!-- ─── GALLERY ─── -->
+                        <div class="case-gallery">
+                            <div class="case-gallery-head">
+                                <h4>Gallery</h4>
+                                <span class="case-gallery-count mono">17 photographs · scroll →</span>
+                            </div>
+                            <div class="gallery-strip">
+                                <figure><img src="assets/gallery/float/1.png" loading="lazy"
+                                        alt="Team picture before the first robot performance." /></figure>
+                                <figure><img src="assets/gallery/float/2.png" loading="lazy"
+                                        alt="Uploading the last piece of firmware to the float. " />
+                                </figure>
+                                <figure><img src="assets/gallery/float/3.png" loading="lazy"
+                                        alt="Both of our robots underwater mid competition." /></figure>
+                                <figure><img src="assets/gallery/float/4.png" loading="lazy"
+                                        alt="Me in the workshop doing the last assembly to the float." />
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="case-links">
+                            <a href="https://github.com/yr08ii" target="_blank" rel="noopener"
+                                class="btn btn-ghost">GitHub
+                                →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ─── FIRST GLOBAL 2024 ────────────────────── -->
+                <article class="project-card" role="button" tabindex="0" aria-haspopup="dialog">
+                    <div class="project-thumb-frame">
+                        <img src="assets/Projects/FIRST/product.png"
+                            alt="Team Mozambique's robot, FIRST Global Challenge 2024" class="project-thumb"
+                            loading="lazy" />
+                    </div>
+                    <div class="project-card-info">
+                        <span class="project-tag">Green robotics</span>
+                        <h3>FIRST Global Challenge 2024</h3>
+                        <p>Mechanical captain and primary driver for Team Mozambique in Athens — youngest member of the
+                            national delegation.</p>
+                        <span class="project-open mono">Case study <span class="arrow">→</span></span>
+                    </div>
+
+                    <div class="project-modal-data" hidden>
+                        <span class="case-eyebrow">Green robotics</span>
+                        <h3>FIRST Global Challenge 2024</h3>
+
+                        <div class="case-meta">
+                            <span>Mechanical design</span><span>REV Control Hub</span><span>Drive
+                                team</span><span>Athens</span>
+                        </div>
+
+                        <dl class="case-facts">
+                            <div>
+                                <dt>Role</dt>
+                                <dd>Mechanical captain · Primary driver</dd>
+                            </div>
+                            <div>
+                                <dt>Team</dt>
+                                <dd>Team Mozambique</dd>
+                            </div>
+                            <div>
+                                <dt>Timeline</dt>
+                                <dd>Sep 2024 – Jun 2025</dd>
+                            </div>
+                            <div>
+                                <dt>Event</dt>
+                                <dd>Athens, Greece</dd>
+                            </div>
+                        </dl>
+
+                        <img src="assets/Projects/FIRST/team.jpeg" alt="Team Mozambique at the FIRST Global Challenge"
+                            class="case-hero" loading="lazy" />
+
+                        <div class="case-block">
+                            <h4>Context</h4>
+                            <p>FIRST Global runs one robotics competition a year, with a single national team from each
+                                participating country and a common kit of parts. The 2024 edition was held in Athens on
+                                the theme of food security. Team Mozambique built and tested in Maputo with Stemmoz,
+                                then
+                                competed in the tournament's alliance format alongside other national teams.</p>
+                        </div>
+
+                        <div class="case-block">
+                            <h4>My role</h4>
+                            <ul>
+                                <li><strong>Mechanical captain.</strong> Ran structural optimisation and CAD iterations
+                                    through the build season, keeping the robot inside competition specification.</li>
+                                <li><strong>Primary driver.</strong> Operated the robot from the driver station across
+                                    tournament matches, playing in alliances drawn against other national teams.</li>
+                                <li><strong>Pit crew.</strong> Daily diagnostic checks and between-match repairs to keep
+                                    the robot available for every scheduled round.</li>
+                            </ul>
+                        </div>
+
+                        <div class="case-block">
+                            <h4>The robot</h4>
+                            <p>Built on the FIRST Global kit: REV Control Hub and Expansion Hub, HD Hex motors, a
+                                chain-driven vertical lift, and a compliant-wheel intake sized for the field's game
+                                elements.</p>
+                        </div>
+
+                        <!-- TODO (Yordine): add the delegation's final ranking and any awards
+                             here if you want them stated. Left out deliberately — not verified. -->
+
+                        <!-- ─── GALLERY ─── -->
+                        <div class="case-gallery">
+                            <div class="case-gallery-head">
+                                <h4>Gallery</h4>
+                                <span class="case-gallery-count mono">17 photographs · scroll →</span>
+                            </div>
+                            <div class="gallery-strip">
+                                <figure><img src="assets/gallery/firstglobal/web/IMG_2151.jpg" loading="lazy"
+                                        alt="Team Mozambique presenting the robot at Stemmoz, Maputo" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/1736167713514.jpg" loading="lazy"
+                                        alt="Team members carrying the competition robot in the Maputo workshop" />
+                                </figure>
+                                <figure><img
+                                        src="assets/gallery/firstglobal/web/47666c8e-6d9f-46bd-936a-acfb2bf3e426.jpg"
+                                        loading="lazy" alt="The finished robot on display before departure" /></figure>
+                                <figure><img
+                                        src="assets/gallery/firstglobal/web/8d5edbb8-ce9f-4600-b25d-f00797afef2e.jpg"
+                                        loading="lazy" alt="The robot shown to guests at the Maputo send-off" />
+                                </figure>
+                                <figure><img src="assets/gallery/firstglobal/web/IMG_2171.jpg" loading="lazy"
+                                        alt="Team Mozambique and supporters at the Maputo send-off" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/FullSizeRender.jpg" loading="lazy"
+                                        alt="The student delegation with the robot and the Mozambican flag" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/1736167418858.jpg" loading="lazy"
+                                        alt="Pre-departure television interview about the competition" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/IMG_2628.jpg" loading="lazy"
+                                        alt="Team Mozambique at the delegation pit in Athens" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/1736168285190.jpg" loading="lazy"
+                                        alt="Working on the robot in the pit between matches" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/IMG_5594.jpg" loading="lazy"
+                                        alt="Adjusting the chain and lift assembly in the pit" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/1736167886825.jpg" loading="lazy"
+                                        alt="Lusophone delegations gathered at the venue" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/IMG_7380.jpg" loading="lazy"
+                                        alt="Delegations in national dress at the pits" /></figure>
+                                <figure><img
+                                        src="assets/gallery/firstglobal/web/1C482257-BC62-4CB4-AC33-5B0E383FB570.jpg"
+                                        loading="lazy" alt="The robot on the competition field" /></figure>
+                                <figure><img
+                                        src="assets/gallery/firstglobal/web/2B02454A-8FF7-4675-BCAA-387D924A3E91.jpg"
+                                        loading="lazy" alt="Intake loaded with a game element before a match" />
+                                </figure>
+                                <figure><img src="assets/gallery/firstglobal/web/IMG_5605.jpg" loading="lazy"
+                                        alt="View from the driver station during a match" /></figure>
+                                <figure><img src="assets/gallery/firstglobal/web/IMG_5607.jpg" loading="lazy"
+                                        alt="Driver station with the field set for the next round" /></figure>
+                                <figure><img
+                                        src="assets/gallery/firstglobal/web/CF76DBFA-2683-4AB7-AFAE-6E5EA8DAAA20.jpg"
+                                        loading="lazy" alt="Broadcast feed showing a Mozambique alliance match" />
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div><!-- /.projects-scroll -->
         </section>
 
-        <!-- ════════════════════════════════════
-         EXPERIENCE
-    ════════════════════════════════════ -->
-        <section class="experience-section" id="experience">
-            <div class="section-wrap">
+        <!-- ══════════════════ EXPERIENCE ══════════════════ -->
+        <section class="section" id="experience">
+            <div class="wrap">
                 <div class="section-header">
-                    <span class="section-tag">// 03</span>
-                    <h2 class="section-title">Experience &amp; <span class="accent">Internships</span></h2>
+                    <div>
+                        <span class="section-tag">02 / 04</span>
+                        <h2 class="section-title">Experience</h2>
+                    </div>
                 </div>
 
                 <div class="timeline">
 
                     <div class="timeline-item">
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-date mono">June 2026 — Present</div>
                         <div class="timeline-content">
-                            <div class="timeline-top">
-                                <div>
-                                    <h3 class="timeline-role">PIC of University Underwater Robotics Team Bouyancy Float
-                                    </h3>
-                                    <span class="timeline-company">MantaRay PolyU — Hong Kong SAR</span>
-                                </div>
-                                <span class="timeline-date mono">Dec 2025 – Present</span>
-                            </div>
+                            <h3 class="timeline-role">IT Summer Intern</h3>
+                            <span class="timeline-company">Payment Cards Group · Hong Kong SAR</span>
                             <ul class="timeline-list">
-                                <li>Technical Leadership as PIC: Appointed as Person-In-Charge (PIC) of the Buoyancy
-                                    Float subsystem for the Manta Ray team, driving the project from concept to a
-                                    3rd-place podium finish at the MATE ROV 2026 Hong Kong Regionals.</li>
-                                <li>Multidisciplinary Engineering: Spearheaded the physical fabrication and CAD modeling
-                                    using Fusion 360, integrated essential hardware electronics, and programmed system
-                                    control logic in C++.</li>
-                                <li>Testing & Troubleshooting: Managed tight development deadlines by executing rigorous
-                                    testing phases and overcoming critical hardware communication bugs to ensure system
-                                    reliability under pressure.</li>
-                            </ul>
-                            <div class="timeline-tags">
-                                <span>Fusion 360</span><span>C++</span><span>Robotics</span><span>Control Systems</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-top">
-                                <div>
-                                    <h3 class="timeline-role">Engineering Service Learning — Low-cost Energy
-                                        Infrastructures for Developing Regions</h3>
-                                    <span class="timeline-company">PolyU SLLO — Ulaanbaatar, Mongolia</span>
-                                </div>
-                                <span class="timeline-date mono">Jan 2026 – July 2026</span>
-                            </div>
-                            <ul class="timeline-list">
-                                <li>Off-Grid Engineering Design & Deployment: Designed and constructed customized,
-                                    low-cost solar energy infrastructure and DC home appliances tailored for
-                                    underprivileged families in rural Mongolia, bringing reliable power to off-grid
-                                    communities.</li>
-                                <li>Technical Energy Assessments: Developed and conducted field survey methodologies to
-                                    perform baseline electrical usage assessments, analyzing both objective engineering
-                                    constraints and subjective community needs to optimize system performance.</li>
-                                <li>Field Problem-Solving & Resourcefulness: Successfully adapted engineering blueprints
-                                    on-site to match the real-world physical and economic constraints of the local
-                                    environment, ensuring system robustness, electrical safety, and long-term
-                                    sustainability.</li>
-                            </ul>
-
-                            <div class="timeline-tags">
-                                <span>Sustainable Hardware</span><span>Off Grid Engineering</span><span>Service
-                                    Learning</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-top">
-                                <div>
-                                    <h3 class="timeline-role">Summer Intern</h3>
-                                    <span class="timeline-company">Belutécnica — Boane, Mozambique</span>
-                                </div>
-                                <span class="timeline-date mono">July 2024 – August 2024</span>
-                            </div>
-                            <ul class="timeline-list">
-                                <li>End-to-End Project Lifecycle & Feasibility Analysis: Experienced the comprehensive
-                                    production workflow—from early-stage planning and design to manufacturing and
-                                    delivery. Learnt and practiced complex project initiation parameters using the
-                                    PESTEL framework
-                                    and applied Belutécnica’s formalized design and deployment protocols to simulate
-                                    structuring
-                                    risk analysis and client quotations.</li>
-                                <li>Industrial CAD Modeling & Workshop Integration: Utilized AutoCAD to design
-                                    standardized component parts and build foundations in structural engineering
-                                    layouts. Bridged the gap between theoretical software modeling and real-world
-                                    execution by actively applying these designs to standard fabrication streams
-                                    including cutting, bending, and assembly.
+                                <li>Design and programmed the backend and frontend of a compliance pipeline for
+                                    transaction monitoring.
                                 </li>
-                                <li>Hands-on Structural Fabrication & Safety Leadership: Gained direct, practical
-                                    experience with industrial manufacturing workflows, practiced core joining
-                                    techniques like MIG, TIG, and Shielded Metal Arc Welding (SMAW). Executed
-                                    high-precision machining tasks using lathe machine tools while actively contributing
-                                    to cross-functional organizational safety audits and environmental risk mitigation
-                                    protocols.</li>
+                                <li>Designed and programmed the frontend of a card management cross-platform application
+                                    using react native expo framework.</li>
                             </ul>
                             <div class="timeline-tags">
-                                <span>SolidWorks</span><span>Project
-                                    Management</span><span>Soldering</span><span>Welding</span>
+                                <span>Python</span><span>Programming</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-top">
-                                <div>
-                                    <h3 class="timeline-role">FIRST Global Robotics Competitor 2024
-                                    </h3>
-                                    <span class="timeline-company">Team Mozambique — Athens, Greece</span>
+
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-date mono">Sep 2025 — Present</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-role">Person-in-Charge, Buoyancy Float</h3>
+                                <span class="timeline-company">MantaRay PolyU · Hong Kong SAR</span>
+                                <ul class="timeline-list">
+                                    <li>Lead the buoyancy float subsystem across mechanical design, electronics, and
+                                        firmware. Third place at the MATE ROV 2026 Hong Kong Regionals.</li>
+                                    <li>Model and fabricate the float assembly in Fusion 360, integrate the
+                                        ESP32 control hardware, and write the depth-hold logic in C++.</li>
+                                    <li>Diagnose hardware communication faults during test cycles and hold the build to
+                                        competition deadlines.</li>
+                                </ul>
+                                <div class="timeline-tags">
+                                    <span>Fusion
+                                        360</span><span>SolidWorks</span><span>C++</span><span>ESP32</span><span>PCB
+                                        design</span>
                                 </div>
-                                <span class="timeline-date mono">October 2024 – November 2024</span>
-                            </div>
-                            <ul class="timeline-list">
-                                <li>Mechanical Team Leadership: Coordinated the build and mechanical optimization of the
-                                    robot, ensuring all structural systems complied with competition specifications.
-                                </li>
-                                <li>Troubleshooting & Testing: Spearheaded daily routine testing, diagnostic checks, and
-                                    rapid mechanical troubleshooting to maximize robot uptime and reliability during
-                                    high-stakes matches.</li>
-                                <li>Drive Team Execution: Served as the primary robot driver, executing precise remote
-                                    operations and real-time tactical maneuvers on the field to achieve match
-                                    objectives.</li>
-                            </ul>
-                            <div class="timeline-tags">
-                                <span>Project Management</span><span>C++</span><span>Robotics</span><span>Control
-                                    Systems</span>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="timeline-item">
+                            <div class="timeline-date mono">Jan 2026 — Jul 2026</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-role">Engineering Service Learning — Off-grid Energy</h3>
+                                <span class="timeline-company">PolyU SLLO · Ulaanbaatar, Mongolia</span>
+                                <ul class="timeline-list">
+                                    <li>Designed low-cost off-grid solar installations and DC appliances for
+                                        Don Bosco Technical Institute in Ulaanbaatar, Mongolia, in alignment with UN
+                                        Sustainable Development Goal 7.</li>
+                                    <li>Designed a website to document the project and contribute for continuity of this
+                                        initiative.</li>
+                                </ul>
+                                <div class="timeline-tags">
+                                    <span>Off-grid power</span><span>Load calculation</span><span>Field
+                                        survey</span><span>SDG 7</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date mono">Sep 2024 — Jun 2025</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-role">Mechanical Team Captain &amp; Primary Driver</h3>
+                                <span class="timeline-company">Team Mozambique, FIRST Global · Athens, Greece</span>
+                                <ul class="timeline-list">
+                                    <li>Directed structural optimisation, CAD iterations, and pit repairs as
+                                        mechanical
+                                        captain and youngest member of the national delegation.</li>
+                                    <li>Drove the robot from the driver station through tournament matches at the FIRST
+                                        Global Challenge in Athens.</li>
+                                    <li>Ran daily diagnostic checks and rapid mechanical repairs to keep the robot
+                                        available
+                                        for every scheduled round.</li>
+                                </ul>
+                                <div class="timeline-tags">
+                                    <span>Mechanical design</span><span>REV Control Hub</span><span>Drive team</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date mono">Jul 2024 — Aug 2024</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-role">Mechanical Engineering Summer Intern</h3>
+                                <span class="timeline-company">Belutécnica · Boane, Mozambique</span>
+                                <ul class="timeline-list">
+                                    <li>Applied PESTEL analysis at project initiation and drafted risk assessments
+                                        to company protocol.</li>
+                                    <li>Drew standardised components and structural layouts in AutoCAD, then followed
+                                        the
+                                        same parts through cutting, welding, and assembly on the shop floor.</li>
+                                    <li>Practised MIG, TIG, and shielded metal arc welding and lathe work; joined safety
+                                        audits and environmental risk reviews.</li>
+                                </ul>
+                                <div class="timeline-tags">
+                                    <span>AutoCAD</span><span>Welding</span><span>Machining</span><span>Project
+                                        planning</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
         </section>
 
-        <!-- ════════════════════════════════════
-         ABOUT / BIO
-    ════════════════════════════════════ -->
-        <section class="about-section" id="about">
-            <div class="section-wrap">
+        <!-- ══════════════════ ABOUT ══════════════════ -->
+        <section class="section" id="about">
+            <div class="wrap">
                 <div class="section-header">
-                    <span class="section-tag">// 04</span>
-                    <h2 class="section-title">About <span class="accent">Me</span></h2>
+                    <div>
+                        <span class="section-tag">03 / 04</span>
+                        <h2 class="section-title">About</h2>
+                    </div>
                 </div>
 
                 <div class="about-grid">
                     <div class="about-text">
-                        <p class="about-lead">
-                        </p>
-                        I am currently a second-year Mechanical Engineering undergraduate at The Hong Kong
-                        Polytechnic University (PolyU), where I am focused on the intersection of robotics and
-                        advanced system design. My academic journey is characterized by a drive for excellence,
-                        exemplified by my recognition as a RISE Global Finalist and my successful completion of the
-                        IB Diploma Programme at Aga Khan Academy with 40/45 points. These achievements serve as the
-                        foundation for my ambition to tackle complex engineering problems on a global stage,
-                        combining rigorous academic theory with a relentless passion for innovation.
-                        </p>
-                        My technical background is rooted in leadership and hands-on hardware development within
-                        competitive environments. Currently, I serve as the Person-in-Charge (PIC) for the PolyU
-                        MATE ROV FLOAT team, where I lead a multidisciplinary team in creating specialized
-                        underwater robotics hardware for international competition. I successfully engineered a
-                        custom underwater float system that integrated a waterproof twist-action power mechanism
-                        with ESP32-driven control logic to solve complex mechanical sealing and depth-maintenance
-                        challenges. This experience follows my tenure as the Mechanical Team Captain and primary
-                        Robot Driver for Team Mozambique at the FIRST Global Robotics Competition, where I managed
-                        critical mechanical operations under high-pressure international match conditions.
-                        </p>
-                        Complementing my mechanical expertise is a diverse technical skill set spanning Solidworks,
-                        Fusion 360, Python programming, and prompt engineering. As a former sports captain, I have
-                        developed a leadership style that prioritizes collaboration and resilience, enabling me to
-                        thrive in demanding, fast-paced environments. I am dedicated to building AI-integrated,
-                        sustainable hardware solutions that address modern engineering needs. Multilingual and
-                        globally-minded, I am fluent in English and Portuguese, and I am currently expanding my
-                        capabilities by learning Mandarin to better engage with the international engineering and
-                        technology sectors.
-                        </p>
+                        <p class="about-lead">I work on hardware that has to survive a real environment.</p>
+
+                        <p>Underwater enclosures that cannot flood. Solar installations that have to run unattended
+                            through a Mongolian winter. Competition robots that get four minutes to work or not. The
+                            constraint is always the same — it has to hold up outside the workshop.</p>
+
+                        <p>I am currently Person-in-Charge of the buoyancy float subsystem on PolyU's MATE ROV team,
+                            where I own the mechanical design, the PCB, and the control firmware. Before that I was
+                            mechanical captain and primary driver for Team Mozambique at the FIRST Global Challenge in
+                            Athens.</p>
+
+                        <p>I came to PolyU on a full entry scholarship after finishing the IB Diploma at Aga Khan
+                            Academy
+                            Maputo with 40/45, and I am a RISE Global Finalist. I work in English and Portuguese, and I
+                            am learning Mandarin.</p>
+
                         <div class="about-awards">
-                            <h4>Awards &amp; Certifications</h4>
+                            <h4>Awards</h4>
                             <ul>
-                                <li><span class="accent-bullet">▸</span> GitHub Foundations Certificate — 2026</li>
-                                <li><span class="accent-bullet">▸</span> Rise Global Finalist — 2024</li>
-                                <li><span class="accent-bullet">▸</span> Head of Academy Commendation Award — 2024
-                                </li>
+                                <li><span>Full entry scholarship — Hong Kong Polytechnic University</span><span
+                                        class="year">2025</span></li>
+                                <li><span>Head of Academy Commendation Award</span><span class="year">2024</span></li>
+                                <li><span>Full scholarship, MYP and DP — Aga Khan Academy Maputo</span><span
+                                        class="year">2019</span></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="about-sidebar">
+                    <aside class="about-sidebar">
                         <div class="sidebar-card">
                             <h4>Education</h4>
                             <div class="edu-item">
-                                <span class="mono accent">2025 – Present</span>
-                                <p><strong>BEng (Hons) Scheme in Mechanical Engineering</strong><br>Hong Kong
-                                    Polythecnic University<br>Entry Scholarship Awardee · Robotics Team Board Member
-                                </p>
+                                <span class="mono">2025 — Present</span>
+                                <p><strong>BEng (Hons) Mechanical Engineering</strong><br />Hong Kong Polytechnic
+                                    University</p>
+                                <span class="edu-note">Entry scholarship · Robotics team board member · Cultural
+                                    ambassador · PolyU EAGLE Adventurer 2025/26<br />Coursework: AI and data analytics,
+                                    computer vision classification, embedded systems control.</span>
                             </div>
                             <div class="edu-item">
-                                <span class="mono accent">2019 – 2025</span>
-                                <p><strong>International Baccalaurate MYP and DP (40/45)</strong><br>Aga Khan Academy
-                                    Maputo<br>Top 5 scorer · Aga Khan Merit and Need - Base Scholarship</p>
+                                <span class="mono">2019 — 2025</span>
+                                <p><strong>IB Diploma — 40/45</strong><br />Aga Khan Academy Maputo</p>
+                                <span class="edu-note">HL Physics, Mathematics, Economics · Top-5 scorer · Merit and
+                                    need-based scholarship</span>
                             </div>
                         </div>
 
                         <div class="sidebar-card">
                             <h4>Languages</h4>
-                            <div class="lang-row"><span>English</span><span class="accent mono">Fluent</span></div>
-                            <div class="lang-row"><span>Portuguese</span><span class="accent mono">Native</span></div>
-                            <div class="lang-row"><span>Spanish</span><span class="accent mono">Conversational</span>
-                            </div>
-                            <div class="lang-row"><span>Mandarin</span><span class="accent mono">Beginner</span></div>
+                            <div class="lang-row"><span>Portuguese</span><span class="mono">Native</span></div>
+                            <div class="lang-row"><span>English</span><span class="mono">Fluent</span></div>
+                            <div class="lang-row"><span>Spanish</span><span class="mono">Conversational</span></div>
+                            <div class="lang-row"><span>Mandarin</span><span class="mono">Learning</span></div>
                         </div>
 
                         <div class="sidebar-card">
-                            <h4>Memberships</h4>
-                            <p style="color:var(--text-muted); font-size:0.9rem;">HKIE — Student Member,
-                                Hong Kong Institution of Engineers</p>
+                            <h4>Membership</h4>
+                            <p>Student Member, Hong Kong Institution of Engineers (HKIE)</p>
                         </div>
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <!-- ════════════════════════════════════
-         CONTACT
-    ════════════════════════════════════ -->
-        <section class="contact-section" id="contact">
-            <div class="section-wrap">
-                <div class="contact-box">
-                    <span class="section-tag">// 05</span>
-                    <h2 class="contact-heading">Let's Build<br><span class="accent">Something</span> Real.</h2>
-                    <p class="contact-sub">Open to internships and collaborative projects.</p>
-                    <div class="contact-links">
-                        <a href="mailto:salvadorchimbutane@gmail.com"
-                            class="btn btn-primary">salvadorchimbutane@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/yordine-chimbutane-25546b345" target="_blank"
-                            class="btn btn-ghost">LinkedIn</a>
-                        <a href="https://github.com/yr08ii" target="_blank" class="btn btn-ghost">GitHub</a>
-                    </div>
+        <!-- ══════════════════ CONTACT ══════════════════ -->
+        <section class="section" id="contact">
+            <div class="wrap">
+                <span class="section-tag">04 / 04</span>
+                <h2 class="contact-heading">Get in <em>touch.</em></h2>
+                <p class="contact-sub">Open to internships and project collaboration in mechanical design, robotics, and
+                    embedded hardware. Based in Hong Kong.</p>
+                <div class="contact-links">
+                    <a href="mailto:salvadorchimbutane@gmail.com"
+                        class="btn btn-primary">salvadorchimbutane@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/yordine-chimbutane-25546b345" target="_blank" rel="noopener"
+                        class="btn btn-ghost">LinkedIn</a>
+                    <a href="https://github.com/yr08ii" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- ════════════════════════════════════
-       FOOTER
-  ════════════════════════════════════ -->
+    <!-- ══════════════════ FOOTER ══════════════════ -->
     <footer class="footer">
-        <div class="footer-inner">
+        <div class="footer-inner wrap">
             <a href="#home" class="nav-logo">YSMC<span class="dot">.</span></a>
             <p class="footer-copy mono">© 2026 Yordine Salvador Matuele Chimbutane</p>
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/yordine-chimbutane-25546b345" target="_blank">LinkedIn</a>
-                <a href="https://github.com/yr08ii" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/yordine-chimbutane-25546b345" target="_blank"
+                    rel="noopener">LinkedIn</a>
+                <a href="https://github.com/yr08ii" target="_blank" rel="noopener">GitHub</a>
                 <a href="mailto:salvadorchimbutane@gmail.com">Email</a>
             </div>
         </div>
     </footer>
 
-    <!-- ════════════════════════════════════
-       PROJECT CASE-STUDY CANVAS
-       Deliberate margin on all sides so the
-       dark site behind frames the canvas.
-  ════════════════════════════════════ -->
-    <div class="canvas-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-label="Project case study">
-        <!-- Clicking the dark framing edge closes -->
-        <div class="canvas-frame">
-            <div class="canvas-panel">
-                <button class="canvas-close" id="modalClose" aria-label="Close project">
-                    <span>&#x2715;</span>
-                </button>
-                <div class="canvas-body" id="modalScroll"></div>
-            </div>
+    <!-- ══════════════════ CASE-STUDY OVERLAY ══════════════════ -->
+    <div class="canvas-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-label="Project case study"
+        hidden>
+        <div class="canvas-panel">
+            <button class="canvas-close" id="modalClose" aria-label="Close case study">&#x2715;</button>
+            <div class="canvas-body" id="modalScroll"></div>
         </div>
     </div>
 
