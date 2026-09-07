@@ -1,0 +1,456 @@
+{
+  "_readme": "Media manifest for the site. Edited through /admin/ — hand edits are fine too, but keep the shape. Prose lives in index.html; only media lives here.",
+  "version": 1,
+  "updated": "2026-09-07T03:02:15Z",
+  "resume": {
+    "path": "assets/Yordine-Chimbutane-Resume.pdf",
+    "label": "Résumé",
+    "updated": "2026-09-07T00:00:00Z"
+  },
+  "projects": [
+    {
+      "key": "float-v2",
+      "title": "Buoyancy Float — Second Generation",
+      "filesFirst": true,
+      "gallery": {
+        "folder": "assets/gallery/float",
+        "items": []
+      },
+      "files": {
+        "label": "Production files",
+        "folder": "assets/Projects/FLOAT/production",
+        "items": [
+          {
+            "file": "assets/Projects/FLOAT/production/hull-assembly.pdf",
+            "kind": "pdf",
+            "title": "Hull assembly drawing — second generation",
+            "ext": "PDF",
+            "label": "CAD drawing",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/Projects/FLOAT/production/single-panel-access.png",
+            "kind": "image",
+            "title": "Single-panel access layout",
+            "ext": "PNG",
+            "label": "CAD render",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/Projects/FLOAT/production/charge-port-pcb.png",
+            "kind": "image",
+            "title": "Charge-port PCB revision",
+            "ext": "PNG",
+            "label": "Schematic",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/Projects/FLOAT/production/pack-10s-layout.pdf",
+            "kind": "pdf",
+            "title": "10S battery pack layout",
+            "ext": "PDF",
+            "label": "Drawing",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          }
+        ]
+      }
+    },
+    {
+      "key": "float-v1",
+      "title": "Buoyancy Float — First Build",
+      "filesFirst": false,
+      "gallery": {
+        "folder": "assets/gallery/float",
+        "items": [
+          {
+            "src": "assets/gallery/float/3.png",
+            "alt": "The MantaRay PolyU team in the pool hall on competition day."
+          },
+          {
+            "src": "assets/gallery/float/4.png",
+            "alt": "The ROV and the float in the competition pool, float standing vertically at depth."
+          },
+          {
+            "src": "assets/gallery/float/7.png",
+            "alt": "Workshop bench: firmware open on the laptop, ROV wired up alongside."
+          },
+          {
+            "src": "assets/gallery/float/8.png",
+            "alt": "Assembling the float body at the workbench."
+          }
+        ]
+      },
+      "files": {
+        "label": "Production files",
+        "folder": "assets/Projects/FLOAT/production",
+        "items": [
+          {
+            "file": "assets/gallery/float/1.jpg",
+            "kind": "image",
+            "title": "Float system specification sheet",
+            "ext": "JPG",
+            "label": "Spec sheet",
+            "note": "One-page summary of the float: the buoyancy engine, the sensing and power chain, and the descent–hold–ascent sequence, with the 3D CAD model and the system integration diagram. Written for the competition documentation pack."
+          },
+          {
+            "file": "assets/gallery/float/2.jpg",
+            "kind": "image",
+            "title": "Control state machine",
+            "ext": "JPG",
+            "label": "Control diagram",
+            "note": "The firmware laid out as states: initialise, sink, decelerate, hold, float, transmit. Shows which sensor drives each transition — Bar30 depth for the setpoint, the potentiometer for actuator position — and what goes to the OLED and back to the surface."
+          },
+          {
+            "file": "assets/gallery/float/5.jpeg",
+            "kind": "image",
+            "title": "PCB schematic — ESP32 carrier board",
+            "ext": "JPG",
+            "label": "Schematic",
+            "note": "The full schematic: 12 V input through the MP1584EN buck converter, TB6612 motor driver for the ballast actuator, I²C to the Bar30 pressure sensor and the OLED, and the limit-switch and rheostat feedback lines back to the ESP32."
+          },
+          {
+            "file": "assets/gallery/float/6.jpeg",
+            "kind": "image",
+            "title": "Fabricated board, first article",
+            "ext": "JPG",
+            "label": "Board photograph",
+            "note": "The board as it came back from fabrication, marked up during inspection. Consolidated a loose wiring harness onto one carrier and cut the electronics footprint inside the hull."
+          }
+        ]
+      }
+    },
+    {
+      "key": "first-global-2024",
+      "title": "FIRST Global Challenge 2024",
+      "filesFirst": true,
+      "gallery": {
+        "folder": "assets/gallery/firstglobal/web",
+        "items": [
+          {
+            "src": "assets/gallery/firstglobal/web/IMG_2151.jpg",
+            "alt": "Team Mozambique presenting the robot at Stemmoz, Maputo"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/1736167713514.jpg",
+            "alt": "Team members carrying the competition robot in the Maputo workshop"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/47666c8e-6d9f-46bd-936a-acfb2bf3e426.jpg",
+            "alt": "The finished robot on display before departure"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/8d5edbb8-ce9f-4600-b25d-f00797afef2e.jpg",
+            "alt": "The robot shown to guests at the Maputo send-off"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/IMG_2171.jpg",
+            "alt": "Team Mozambique and supporters at the Maputo send-off"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/FullSizeRender.jpg",
+            "alt": "The student delegation with the robot and the Mozambican flag"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/1736167418858.jpg",
+            "alt": "Pre-departure television interview about the competition"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/IMG_2628.jpg",
+            "alt": "Team Mozambique at the delegation pit in Athens"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/1736168285190.jpg",
+            "alt": "Working on the robot in the pit between matches"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/IMG_5594.jpg",
+            "alt": "Adjusting the chain and lift assembly in the pit"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/1736167886825.jpg",
+            "alt": "Lusophone delegations gathered at the venue"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/IMG_7380.jpg",
+            "alt": "Delegations in national dress at the pits"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/1C482257-BC62-4CB4-AC33-5B0E383FB570.jpg",
+            "alt": "The robot on the competition field"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/2B02454A-8FF7-4675-BCAA-387D924A3E91.jpg",
+            "alt": "Intake loaded with a game element before a match"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/IMG_5605.jpg",
+            "alt": "View from the driver station during a match"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/IMG_5607.jpg",
+            "alt": "Driver station with the field set for the next round"
+          },
+          {
+            "src": "assets/gallery/firstglobal/web/CF76DBFA-2683-4AB7-AFAE-6E5EA8DAAA20.jpg",
+            "alt": "Broadcast feed showing a Mozambique alliance match"
+          }
+        ]
+      },
+      "files": {
+        "label": "Production files",
+        "folder": "assets/Projects/FIRST/production",
+        "items": [
+          {
+            "file": "assets/Projects/FIRST/production/chassis-drawing.pdf",
+            "kind": "pdf",
+            "title": "Chassis and drivetrain drawing",
+            "ext": "PDF",
+            "label": "CAD drawing",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/Projects/FIRST/production/lift-assembly.png",
+            "kind": "image",
+            "title": "Chain-driven vertical lift assembly",
+            "ext": "PNG",
+            "label": "CAD render",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/Projects/FIRST/production/intake-geometry.png",
+            "kind": "image",
+            "title": "Compliant-wheel intake geometry",
+            "ext": "PNG",
+            "label": "CAD render",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/Projects/FIRST/production/engineering-notebook.pdf",
+            "kind": "pdf",
+            "title": "Build-season engineering notebook",
+            "ext": "PDF",
+            "label": "Notebook",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          }
+        ]
+      }
+    }
+  ],
+  "experiences": [
+    {
+      "key": "payment-cards-group",
+      "role": "IT Summer Intern",
+      "company": "Payment Cards Group · Hong Kong SAR",
+      "files": {
+        "label": "Documents & photographs",
+        "folder": "assets/experiences/payment-cards-group",
+        "items": [
+          {
+            "file": "assets/experiences/payment-cards-group/team.jpg",
+            "kind": "image",
+            "title": "With the Payment Cards Group team",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/payment-cards-group/compliance-pipeline.pdf",
+            "kind": "pdf",
+            "title": "Compliance pipeline — design note",
+            "ext": "PDF",
+            "label": "Document",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/payment-cards-group/card-app-screens.png",
+            "kind": "image",
+            "title": "Card management app — screens",
+            "ext": "PNG",
+            "label": "Screens",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/payment-cards-group/reference-letter.pdf",
+            "kind": "pdf",
+            "title": "Reference letter",
+            "ext": "PDF",
+            "label": "Reference letter",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          }
+        ]
+      }
+    },
+    {
+      "key": "mantaray-float",
+      "role": "Person-in-Charge, Buoyancy Float",
+      "company": "MantaRay PolyU · Hong Kong SAR",
+      "files": {
+        "label": "Documents & photographs",
+        "folder": "assets/experiences/mantaray-float",
+        "items": [
+          {
+            "file": "assets/gallery/float/1.jpg",
+            "kind": "image",
+            "title": "Float system specification sheet",
+            "ext": "JPG",
+            "label": "Spec sheet",
+            "note": "The subsystem written up for the competition documentation pack: buoyancy engine, sensing and power chain, and the descent–hold–ascent sequence."
+          },
+          {
+            "file": "assets/gallery/float/6.jpeg",
+            "kind": "image",
+            "title": "Carrier board, first article",
+            "ext": "JPG",
+            "label": "Board photograph",
+            "note": "The ESP32 carrier board back from fabrication, marked up during inspection."
+          },
+          {
+            "file": "assets/gallery/float/8.png",
+            "kind": "image",
+            "title": "Float assembly at the workbench",
+            "ext": "PNG",
+            "label": "Photograph",
+            "note": "Assembling the float body in the PolyU workshop."
+          },
+          {
+            "file": "assets/gallery/float/7.png",
+            "kind": "image",
+            "title": "Firmware bring-up",
+            "ext": "PNG",
+            "label": "Photograph",
+            "note": "Bench session with the firmware open on the laptop and the ROV wired up alongside."
+          }
+        ]
+      }
+    },
+    {
+      "key": "polyu-mongolia",
+      "role": "Engineering Service Learning — Off-grid Energy",
+      "company": "PolyU SLLO · Ulaanbaatar, Mongolia",
+      "files": {
+        "label": "Documents & photographs",
+        "folder": "assets/experiences/polyu-mongolia",
+        "items": [
+          {
+            "file": "assets/experiences/polyu-mongolia/site-survey.jpg",
+            "kind": "image",
+            "title": "Site survey — Don Bosco Technical Institute",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/polyu-mongolia/load-calculation.pdf",
+            "kind": "pdf",
+            "title": "Off-grid load calculation",
+            "ext": "PDF",
+            "label": "Document",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/polyu-mongolia/installation.jpg",
+            "kind": "image",
+            "title": "Solar installation in Ulaanbaatar",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/polyu-mongolia/project-website.png",
+            "kind": "image",
+            "title": "Project documentation website",
+            "ext": "PNG",
+            "label": "Screens",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          }
+        ]
+      }
+    },
+    {
+      "key": "first-global",
+      "role": "Mechanical Team Captain & Primary Driver",
+      "company": "Team Mozambique, FIRST Global · Athens, Greece",
+      "files": {
+        "label": "Documents & photographs",
+        "folder": "assets/experiences/first-global",
+        "items": [
+          {
+            "file": "assets/gallery/firstglobal/web/IMG_2151.jpg",
+            "kind": "image",
+            "title": "Presenting the robot in Maputo",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "Team Mozambique showing the finished robot at Stemmoz before departure."
+          },
+          {
+            "file": "assets/gallery/firstglobal/web/IMG_2628.jpg",
+            "kind": "image",
+            "title": "Delegation pit, Athens",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "The Mozambique pit at the FIRST Global Challenge venue in Athens."
+          },
+          {
+            "file": "assets/gallery/firstglobal/web/1736168285190.jpg",
+            "kind": "image",
+            "title": "Between-match repairs",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "Pit work between rounds — the diagnostic and repair cycle that kept the robot available for every scheduled match."
+          },
+          {
+            "file": "assets/gallery/firstglobal/web/IMG_5605.jpg",
+            "kind": "image",
+            "title": "Driver station",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "View from the driver station during a tournament match."
+          }
+        ]
+      }
+    },
+    {
+      "key": "belutecnica",
+      "role": "Mechanical Engineering Summer Intern",
+      "company": "Belutécnica · Boane, Mozambique",
+      "files": {
+        "label": "Documents & photographs",
+        "folder": "assets/experiences/belutecnica",
+        "items": [
+          {
+            "file": "assets/experiences/belutecnica/autocad-drawing.pdf",
+            "kind": "pdf",
+            "title": "Structural layout — AutoCAD drawing",
+            "ext": "PDF",
+            "label": "CAD drawing",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/belutecnica/shop-floor.jpg",
+            "kind": "image",
+            "title": "On the shop floor in Boane",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/belutecnica/risk-assessment.pdf",
+            "kind": "pdf",
+            "title": "Project risk assessment",
+            "ext": "PDF",
+            "label": "Document",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          },
+          {
+            "file": "assets/experiences/belutecnica/reference-letter.pdf",
+            "kind": "pdf",
+            "title": "Reference letter",
+            "ext": "PDF",
+            "label": "Reference letter",
+            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+          }
+        ]
+      }
+    }
+  ]
+}

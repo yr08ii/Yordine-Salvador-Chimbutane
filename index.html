@@ -33,7 +33,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="Yordine%20Resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
+                <li><a href="assets/Yordine-Chimbutane-Resume.pdf" data-resume-link target="_blank" rel="noopener">Résumé</a></li>
                 <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
         </div>
@@ -62,7 +62,7 @@
 
                     <div class="hero-btns">
                         <a href="#projects" class="btn btn-primary">View projects</a>
-                        <a href="Yordine%20Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Résumé
+                        <a href="assets/Yordine-Chimbutane-Resume.pdf" data-resume-link target="_blank" rel="noopener" class="btn btn-ghost">Résumé
                             (PDF)</a>
                     </div>
 
@@ -101,7 +101,7 @@
             <div class="projects-scroll" id="projectsScroll">
 
                 <!-- ─── FLOAT v2 ─────────────────────────────── -->
-                <article class="project-card" role="button" tabindex="0" aria-haspopup="dialog">
+                <article class="project-card" data-key="float-v2" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="project-thumb-frame">
                         <img src="assets/Projects/FLOAT/product.png" alt="Buoyancy float assembly, second generation"
                             class="project-thumb" loading="lazy" />
@@ -119,7 +119,7 @@
                         <h3>Buoyancy Float — Second Generation</h3>
 
                         <div class="case-meta">
-                            <span>SolidWorks</span><span>Fusion 360</span><span>ESP32</span><span>C++</span><span>PCB
+                            <span>SolidWorks</span><span>Fusion 360</span><span>ESP32</span><span>PCB
                                 design</span>
                         </div>
 
@@ -142,7 +142,7 @@
                             </div>
                         </dl>
 
-                        <img src="assets/Projects/FLOAT/team.jpeg" alt="Buoyancy float team at work" class="case-hero"
+                        <img src="assets/Projects/FLOAT/team.jpg" alt="Buoyancy float team at work" class="case-hero"
                             loading="lazy" />
 
                         <div class="case-block">
@@ -179,13 +179,15 @@
                                 →</a>
                         </div>
 
-                        <!-- No photos in assets/gallery/float yet — drop images there and add a
-                             .case-gallery block here, matching the FIRST Global one below. -->
+                        <div data-media="files" data-key="float-v2"></div>
+
+                        <!-- Photographs of the second-generation build go in a .case-gallery block
+                             here, matching the one in the first-build case study below. -->
                     </div>
                 </article>
 
                 <!-- ─── FLOAT v1 ─────────────────────────────── -->
-                <article class="project-card" role="button" tabindex="0" aria-haspopup="dialog">
+                <article class="project-card" data-key="float-v1" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="project-thumb-frame">
                         <img src="assets/Projects/FLOAT/product.png" alt="Buoyancy float, first build"
                             class="project-thumb" loading="lazy" />
@@ -203,8 +205,7 @@
                         <h3>Buoyancy Float — First Build</h3>
 
                         <div class="case-meta">
-                            <span>SolidWorks</span><span>Fusion 360</span><span>ESP32</span><span>C++ /
-                                Arduino</span><span>PCB design</span>
+                            <span>SolidWorks</span><span>Fusion 360</span><span>ESP32</span><span>Arduino</span><span>PCB design</span>
                         </div>
 
                         <dl class="case-facts">
@@ -245,7 +246,7 @@
                                 <li><strong>Electronics.</strong> Custom PCB distributing power and routing an ESP32 to
                                     the pressure sensor and motor driver, replacing a loose wiring harness and cutting
                                     the electronics footprint.</li>
-                                <li><strong>Control.</strong> C++ on Arduino. A bang-bang loop on pressure-derived depth
+                                <li><strong>Control.</strong> Arduino firmware. A bang-bang loop on pressure-derived depth
                                     drives the ballast motor to hold a setpoint against currents.</li>
                             </ul>
                         </div>
@@ -259,24 +260,9 @@
                         </div>
 
                         <!-- ─── GALLERY ─── -->
-                        <div class="case-gallery">
-                            <div class="case-gallery-head">
-                                <h4>Gallery</h4>
-                                <span class="case-gallery-count mono">17 photographs · scroll →</span>
-                            </div>
-                            <div class="gallery-strip">
-                                <figure><img src="assets/gallery/float/1.png" loading="lazy"
-                                        alt="Team picture before the first robot performance." /></figure>
-                                <figure><img src="assets/gallery/float/2.png" loading="lazy"
-                                        alt="Uploading the last piece of firmware to the float. " />
-                                </figure>
-                                <figure><img src="assets/gallery/float/3.png" loading="lazy"
-                                        alt="Both of our robots underwater mid competition." /></figure>
-                                <figure><img src="assets/gallery/float/4.png" loading="lazy"
-                                        alt="Me in the workshop doing the last assembly to the float." />
-                                </figure>
-                            </div>
-                        </div>
+                        <div data-media="gallery" data-key="float-v1"></div>
+
+                        <div data-media="files" data-key="float-v1"></div>
 
                         <div class="case-links">
                             <a href="https://github.com/yr08ii" target="_blank" rel="noopener"
@@ -287,7 +273,7 @@
                 </article>
 
                 <!-- ─── FIRST GLOBAL 2024 ────────────────────── -->
-                <article class="project-card" role="button" tabindex="0" aria-haspopup="dialog">
+                <article class="project-card" data-key="first-global-2024" role="button" tabindex="0" aria-haspopup="dialog">
                     <div class="project-thumb-frame">
                         <img src="assets/Projects/FIRST/product.png"
                             alt="Team Mozambique's robot, FIRST Global Challenge 2024" class="project-thumb"
@@ -363,58 +349,10 @@
                         <!-- TODO (Yordine): add the delegation's final ranking and any awards
                              here if you want them stated. Left out deliberately — not verified. -->
 
+                        <div data-media="files" data-key="first-global-2024"></div>
+
                         <!-- ─── GALLERY ─── -->
-                        <div class="case-gallery">
-                            <div class="case-gallery-head">
-                                <h4>Gallery</h4>
-                                <span class="case-gallery-count mono">17 photographs · scroll →</span>
-                            </div>
-                            <div class="gallery-strip">
-                                <figure><img src="assets/gallery/firstglobal/web/IMG_2151.jpg" loading="lazy"
-                                        alt="Team Mozambique presenting the robot at Stemmoz, Maputo" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/1736167713514.jpg" loading="lazy"
-                                        alt="Team members carrying the competition robot in the Maputo workshop" />
-                                </figure>
-                                <figure><img
-                                        src="assets/gallery/firstglobal/web/47666c8e-6d9f-46bd-936a-acfb2bf3e426.jpg"
-                                        loading="lazy" alt="The finished robot on display before departure" /></figure>
-                                <figure><img
-                                        src="assets/gallery/firstglobal/web/8d5edbb8-ce9f-4600-b25d-f00797afef2e.jpg"
-                                        loading="lazy" alt="The robot shown to guests at the Maputo send-off" />
-                                </figure>
-                                <figure><img src="assets/gallery/firstglobal/web/IMG_2171.jpg" loading="lazy"
-                                        alt="Team Mozambique and supporters at the Maputo send-off" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/FullSizeRender.jpg" loading="lazy"
-                                        alt="The student delegation with the robot and the Mozambican flag" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/1736167418858.jpg" loading="lazy"
-                                        alt="Pre-departure television interview about the competition" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/IMG_2628.jpg" loading="lazy"
-                                        alt="Team Mozambique at the delegation pit in Athens" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/1736168285190.jpg" loading="lazy"
-                                        alt="Working on the robot in the pit between matches" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/IMG_5594.jpg" loading="lazy"
-                                        alt="Adjusting the chain and lift assembly in the pit" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/1736167886825.jpg" loading="lazy"
-                                        alt="Lusophone delegations gathered at the venue" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/IMG_7380.jpg" loading="lazy"
-                                        alt="Delegations in national dress at the pits" /></figure>
-                                <figure><img
-                                        src="assets/gallery/firstglobal/web/1C482257-BC62-4CB4-AC33-5B0E383FB570.jpg"
-                                        loading="lazy" alt="The robot on the competition field" /></figure>
-                                <figure><img
-                                        src="assets/gallery/firstglobal/web/2B02454A-8FF7-4675-BCAA-387D924A3E91.jpg"
-                                        loading="lazy" alt="Intake loaded with a game element before a match" />
-                                </figure>
-                                <figure><img src="assets/gallery/firstglobal/web/IMG_5605.jpg" loading="lazy"
-                                        alt="View from the driver station during a match" /></figure>
-                                <figure><img src="assets/gallery/firstglobal/web/IMG_5607.jpg" loading="lazy"
-                                        alt="Driver station with the field set for the next round" /></figure>
-                                <figure><img
-                                        src="assets/gallery/firstglobal/web/CF76DBFA-2683-4AB7-AFAE-6E5EA8DAAA20.jpg"
-                                        loading="lazy" alt="Broadcast feed showing a Mozambique alliance match" />
-                                </figure>
-                            </div>
-                        </div>
+                        <div data-media="gallery" data-key="first-global-2024"></div>
                     </div>
                 </article>
 
@@ -433,7 +371,7 @@
 
                 <div class="timeline">
 
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-key="payment-cards-group">
                         <div class="timeline-date mono">June 2026 — Present</div>
                         <div class="timeline-content">
                             <h3 class="timeline-role">IT Summer Intern</h3>
@@ -448,13 +386,15 @@
                             <div class="timeline-tags">
                                 <span>Python</span><span>Programming</span>
                             </div>
+
+                            <div data-media="files" data-key="payment-cards-group"></div>
                         </div>
                     </div>
 
 
                     <div class="timeline">
 
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-key="mantaray-float">
                             <div class="timeline-date mono">Sep 2025 — Present</div>
                             <div class="timeline-content">
                                 <h3 class="timeline-role">Person-in-Charge, Buoyancy Float</h3>
@@ -463,19 +403,21 @@
                                     <li>Lead the buoyancy float subsystem across mechanical design, electronics, and
                                         firmware. Third place at the MATE ROV 2026 Hong Kong Regionals.</li>
                                     <li>Model and fabricate the float assembly in Fusion 360, integrate the
-                                        ESP32 control hardware, and write the depth-hold logic in C++.</li>
+                                        ESP32 control hardware, and write the depth-hold firmware.</li>
                                     <li>Diagnose hardware communication faults during test cycles and hold the build to
                                         competition deadlines.</li>
                                 </ul>
                                 <div class="timeline-tags">
                                     <span>Fusion
-                                        360</span><span>SolidWorks</span><span>C++</span><span>ESP32</span><span>PCB
+                                        360</span><span>SolidWorks</span><span>ESP32</span><span>PCB
                                         design</span>
                                 </div>
+
+                                <div data-media="files" data-key="mantaray-float"></div>
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-key="polyu-mongolia">
                             <div class="timeline-date mono">Jan 2026 — Jul 2026</div>
                             <div class="timeline-content">
                                 <h3 class="timeline-role">Engineering Service Learning — Off-grid Energy</h3>
@@ -491,10 +433,12 @@
                                     <span>Off-grid power</span><span>Load calculation</span><span>Field
                                         survey</span><span>SDG 7</span>
                                 </div>
+
+                                <div data-media="files" data-key="polyu-mongolia"></div>
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-key="first-global">
                             <div class="timeline-date mono">Sep 2024 — Jun 2025</div>
                             <div class="timeline-content">
                                 <h3 class="timeline-role">Mechanical Team Captain &amp; Primary Driver</h3>
@@ -512,10 +456,12 @@
                                 <div class="timeline-tags">
                                     <span>Mechanical design</span><span>REV Control Hub</span><span>Drive team</span>
                                 </div>
+
+                                <div data-media="files" data-key="first-global"></div>
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item" data-key="belutecnica">
                             <div class="timeline-date mono">Jul 2024 — Aug 2024</div>
                             <div class="timeline-content">
                                 <h3 class="timeline-role">Mechanical Engineering Summer Intern</h3>
@@ -533,11 +479,14 @@
                                     <span>AutoCAD</span><span>Welding</span><span>Machining</span><span>Project
                                         planning</span>
                                 </div>
+
+                                <div data-media="files" data-key="belutecnica"></div>
                             </div>
                         </div>
 
                     </div>
                 </div>
+            </div>
         </section>
 
         <!-- ══════════════════ ABOUT ══════════════════ -->
@@ -565,8 +514,7 @@
 
                         <p>I came to PolyU on a full entry scholarship after finishing the IB Diploma at Aga Khan
                             Academy
-                            Maputo with 40/45, and I am a RISE Global Finalist. I work in English and Portuguese, and I
-                            am learning Mandarin.</p>
+                            Maputo with 40/45, and I am a RISE Global Finalist. I work in English and Portuguese.</p>
 
                         <div class="about-awards">
                             <h4>Awards</h4>
@@ -585,11 +533,11 @@
                             <h4>Education</h4>
                             <div class="edu-item">
                                 <span class="mono">2025 — Present</span>
-                                <p><strong>BEng (Hons) Mechanical Engineering</strong><br />Hong Kong Polytechnic
+                                <p><strong>BEng (Hons) Mechanical Engineering</strong><br />Intelligent Robotics Engineering stream<br />Hong Kong Polytechnic
                                     University</p>
                                 <span class="edu-note">Entry scholarship · Robotics team board member · Cultural
-                                    ambassador · PolyU EAGLE Adventurer 2025/26<br />Coursework: AI and data analytics,
-                                    computer vision classification, embedded systems control.</span>
+                                    ambassador · PolyU EAGLE Adventurer 2025/26<br />Coursework: fundamental AI and data
+                                    analytics, computer programming, applied engineering fundamentals.</span>
                             </div>
                             <div class="edu-item">
                                 <span class="mono">2019 — 2025</span>
@@ -603,8 +551,6 @@
                             <h4>Languages</h4>
                             <div class="lang-row"><span>Portuguese</span><span class="mono">Native</span></div>
                             <div class="lang-row"><span>English</span><span class="mono">Fluent</span></div>
-                            <div class="lang-row"><span>Spanish</span><span class="mono">Conversational</span></div>
-                            <div class="lang-row"><span>Mandarin</span><span class="mono">Learning</span></div>
                         </div>
 
                         <div class="sidebar-card">
@@ -655,6 +601,30 @@
         <div class="canvas-panel">
             <button class="canvas-close" id="modalClose" aria-label="Close case study">&#x2715;</button>
             <div class="canvas-body" id="modalScroll"></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════ FILE VIEWER ══════════════════ -->
+    <!-- Shared by the attachment cards in the experience timeline and the
+         "Production files" drawers inside a case study. Layered above the
+         case-study overlay so it can be opened from inside one. -->
+    <div class="viewer-backdrop" id="fileViewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle" hidden>
+        <div class="viewer-panel">
+            <div class="viewer-head">
+                <div>
+                    <span class="viewer-kind mono" id="viewerKind"></span>
+                    <h3 class="viewer-title" id="viewerTitle"></h3>
+                </div>
+                <div class="viewer-actions">
+                    <a class="btn btn-ghost" id="viewerOpen" href="#" target="_blank" rel="noopener">
+                        <span class="viewer-open-label">Open in new tab</span> ↗</a>
+                    <button class="viewer-close" id="viewerClose" aria-label="Close file">&#x2715;</button>
+                </div>
+            </div>
+            <div class="viewer-stage" id="viewerStage"></div>
+            <div class="viewer-foot" id="viewerFoot">
+                <p class="viewer-note" id="viewerNote"></p>
+            </div>
         </div>
     </div>
 

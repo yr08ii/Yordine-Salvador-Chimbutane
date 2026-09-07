@@ -1,0 +1,939 @@
+/* ═══════════════════════════════════════════════
+   MEDIA DESK — back-of-house for the portfolio.
+   Same palette and type as the site, but denser and
+   more utilitarian: mono carries the interface, the
+   serif is kept for titles so it still reads as the
+   same publication.
+   ═══════════════════════════════════════════════ */
+:root {
+    --paper: #FAF9F7;
+    --paper-2: #F3F1EC;
+    --paper-3: #EBE8E1;
+    --ink: #16150F;
+    --ink-2: #3A3934;
+    --muted: #6B6B63;
+    --rule: #E3E0D8;
+    --accent: #B23A28;
+    --accent-soft: #F6EBE8;
+    --good: #3F6B4A;
+
+    --step--2: 0.7rem;
+    --step--1: clamp(0.76rem, 0.74rem + 0.1vw, 0.82rem);
+    --step-0: clamp(0.9rem, 0.88rem + 0.12vw, 0.98rem);
+    --step-1: clamp(1.1rem, 1.04rem + 0.3vw, 1.3rem);
+    --step-2: clamp(1.5rem, 1.3rem + 0.9vw, 2.2rem);
+    --step-3: clamp(2.2rem, 1.7rem + 2.4vw, 3.6rem);
+
+    --rail-w: 210px;
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    /* Kept in step with the real docket height by admin.js — it grows when the
+       change list is open and wraps to three rows on a narrow screen. */
+    --docket-h: 64px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--paper-2);
+    color: var(--ink);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+code {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.92em;
+    background: var(--paper-3);
+    padding: 0.1em 0.35em;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+ol,
+ul {
+    padding-left: 1.1rem;
+}
+
+/* ─── Shared pieces ──────────────────────────── */
+.eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--1);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    font-size: var(--step--1);
+    white-space: nowrap;
+    transition: background 0.2s var(--ease), color 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+
+.btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-ghost:hover:not(:disabled) {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* A <label> wrapping a file input has to look and behave like a button. */
+label.btn {
+    cursor: pointer;
+}
+
+.ghost-link {
+    font-size: var(--step--1);
+    color: var(--muted);
+    transition: color 0.2s var(--ease);
+}
+
+.ghost-link:hover {
+    color: var(--accent);
+}
+
+.field {
+    display: block;
+}
+
+.field-label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--1);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+}
+
+.field-input {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    font-size: var(--step--1);
+    transition: border-color 0.2s var(--ease);
+}
+
+.field-input:focus {
+    border-color: var(--ink);
+    outline: none;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--step--1);
+    color: var(--ink-2);
+    cursor: pointer;
+}
+
+.check input {
+    accent-color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════════
+   GATE
+   ═══════════════════════════════════════════════ */
+.gate {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: clamp(1.25rem, 5vw, 3rem);
+}
+
+.gate[hidden] {
+    display: none;
+}
+
+.gate-panel {
+    width: min(560px, 100%);
+    padding: clamp(1.75rem, 5vw, 3rem);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+}
+
+.gate-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: var(--step-3);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 1rem;
+}
+
+.gate-title em {
+    font-style: italic;
+    color: var(--ink-2);
+}
+
+.gate-lead {
+    color: var(--ink-2);
+    max-width: 46ch;
+}
+
+.gate-form {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0 1.5rem;
+}
+
+.gate-form .btn {
+    justify-self: start;
+}
+
+.gate-error {
+    padding: 0.6rem 0.8rem;
+    background: var(--accent-soft);
+    border-left: 2px solid var(--accent);
+    font-size: var(--step--1);
+    color: var(--ink);
+}
+
+.gate-help {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+}
+
+.gate-help>summary {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--1);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    list-style: none;
+}
+
+.gate-help>summary::-webkit-details-marker {
+    display: none;
+}
+
+.gate-help>summary::before {
+    content: '+ ';
+    color: var(--accent);
+}
+
+.gate-help[open]>summary::before {
+    content: '– ';
+}
+
+.gate-help ol {
+    display: grid;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    font-size: var(--step--1);
+    color: var(--ink-2);
+}
+
+.note {
+    font-size: var(--step--1);
+    color: var(--muted);
+    border-left: 1px solid var(--rule);
+    padding-left: 0.85rem;
+}
+
+/* ═══════════════════════════════════════════════
+   DESK SHELL
+   ═══════════════════════════════════════════════ */
+.desk[hidden] {
+    display: none;
+}
+
+.masthead {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem clamp(1rem, 3vw, 2rem);
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+}
+
+.masthead-left,
+.masthead-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.wordmark {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+}
+
+.wordmark .dot {
+    color: var(--accent);
+}
+
+.masthead-sep,
+.masthead-repo {
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+.desk-body {
+    display: grid;
+    grid-template-columns: var(--rail-w) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1rem, 3vw, 2rem);
+    /* Room for the docket, which floats over the foot of the page. */
+    padding-bottom: calc(var(--docket-h) + 2rem);
+}
+
+/* ─── Rail ───────────────────────────────────── */
+.rail {
+    position: sticky;
+    top: 4.5rem;
+    display: grid;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+}
+
+.rail-head {
+    padding: 0.6rem 0.85rem;
+    background: var(--paper-3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--2);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.rail a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.55rem 0.85rem;
+    background: var(--paper);
+    font-size: var(--step--1);
+    text-decoration: none;
+    transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+
+.rail a:hover {
+    background: var(--paper-2);
+    color: var(--accent);
+}
+
+.rail a .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--2);
+    color: var(--muted);
+}
+
+/* A section with staged edits gets a rust tick, so the desk shows at a
+   glance where the unpublished work is. */
+.rail a.is-dirty {
+    box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.rail a.is-dirty .n {
+    color: var(--accent);
+}
+
+/* ─── Cards ──────────────────────────────────── */
+.pane {
+    display: grid;
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.card {
+    padding: clamp(1.1rem, 3vw, 1.75rem);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    scroll-margin-top: 5rem;
+    /* Cards arrive in sequence on first paint. */
+    animation: rise 0.45s var(--ease) both;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+.card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-tag {
+    display: block;
+    font-size: var(--step--1);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.card-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-top: 0.2rem;
+}
+
+.card-sub {
+    font-size: var(--step--1);
+    color: var(--muted);
+    margin-top: 0.2rem;
+}
+
+.card-note {
+    max-width: 62ch;
+    font-size: var(--step--1);
+    color: var(--ink-2);
+    margin-bottom: 1.25rem;
+}
+
+/* ─── Group (one media list) ─────────────────── */
+.group+.group {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+}
+
+.group-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.group-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--1);
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.group-folder {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--2);
+    color: var(--muted);
+}
+
+/* ─── Rows ───────────────────────────────────── */
+.rows {
+    display: grid;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+}
+
+.rows:empty {
+    display: none;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 68px minmax(0, 1fr) auto;
+    gap: 0.9rem;
+    align-items: start;
+    padding: 0.8rem 0.9rem;
+    background: var(--paper);
+    transition: background 0.2s var(--ease);
+}
+
+.row.is-new {
+    background: var(--accent-soft);
+    box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.row.is-edited {
+    box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.row-thumb {
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    overflow: hidden;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--2);
+    color: var(--muted);
+}
+
+.row-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.row-thumb.is-doc,
+.row-thumb.is-missing {
+    border-style: dashed;
+}
+
+.row-thumb.is-missing img {
+    display: none;
+}
+
+.row-fields {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+}
+
+.row-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.row-line .field-input {
+    flex: 1 1 12rem;
+}
+
+.row-line .field-input.short {
+    flex: 0 1 11rem;
+}
+
+.row-fields textarea.field-input {
+    resize: vertical;
+    min-height: 3.2rem;
+    line-height: 1.5;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: var(--step--1);
+}
+
+.row-path {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--2);
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.row-path .flag {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.row-tools {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.25rem;
+    align-self: center;
+}
+
+.tool {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--1);
+    line-height: 1;
+    color: var(--muted);
+    transition: background 0.18s var(--ease), color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.tool:hover:not(:disabled) {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+}
+
+.tool:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.tool.danger:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Inline confirm, so removing a file is a deliberate two-step. */
+.row-confirm {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.7rem;
+    padding: 0.7rem 0.8rem;
+    background: var(--accent-soft);
+    border-left: 2px solid var(--accent);
+    font-size: var(--step--1);
+}
+
+.row-confirm .spacer {
+    flex: 1 1 auto;
+}
+
+.row-confirm button {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--1);
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--ink);
+}
+
+.row-confirm button:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+/* ─── Drop zone ──────────────────────────────── */
+.drop {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    padding: 0.85rem 1rem;
+    border: 1px dashed var(--rule);
+    background: var(--paper);
+    transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.drop.is-over {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.drop-text {
+    font-size: var(--step--1);
+    color: var(--muted);
+}
+
+.empty {
+    padding: 1rem;
+    border: 1px dashed var(--rule);
+    font-size: var(--step--1);
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ─── Résumé card ────────────────────────────── */
+.resume-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+}
+
+.resume-meta {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.resume-path {
+    font-size: var(--step--1);
+    overflow-wrap: anywhere;
+}
+
+.resume-stamp {
+    font-size: var(--step--2);
+    color: var(--muted);
+}
+
+.resume-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.staged-line {
+    margin-top: 0.85rem;
+    padding: 0.6rem 0.8rem;
+    background: var(--accent-soft);
+    border-left: 2px solid var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--1);
+}
+
+.staged-line[hidden] {
+    display: none;
+}
+
+/* ═══════════════════════════════════════════════
+   DOCKET — the running tally, fixed to the foot
+   ═══════════════════════════════════════════════ */
+.docket {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    background: var(--paper);
+    border-top: 1px solid var(--ink);
+}
+
+.docket-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: 0.85rem clamp(1rem, 3vw, 2rem);
+}
+
+.docket-tally {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+}
+
+.docket-count {
+    font-size: var(--step--1);
+    color: var(--muted);
+}
+
+.docket-count.is-live {
+    color: var(--accent);
+}
+
+.docket-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.docket-msg {
+    width: min(320px, 42vw);
+}
+
+.docket-list {
+    max-height: 34vh;
+    overflow-y: auto;
+    border-top: 1px solid var(--rule);
+    background: var(--paper-2);
+}
+
+.docket-list[hidden] {
+    display: none;
+}
+
+.docket-list ul {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding: 0.75rem clamp(1rem, 3vw, 2rem);
+    list-style: none;
+    display: grid;
+    gap: 0.3rem;
+}
+
+.docket-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--step--2);
+    color: var(--ink-2);
+}
+
+.docket-list .op {
+    flex: 0 0 5.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.docket-list .op.del {
+    color: var(--ink);
+}
+
+.docket-progress {
+    height: 2px;
+    background: var(--rule);
+}
+
+.docket-progress[hidden] {
+    display: none;
+}
+
+.docket-progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.3s var(--ease);
+}
+
+/* ═══════════════════════════════════════════════
+   TOAST
+   ═══════════════════════════════════════════════ */
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: calc(var(--docket-h) + 1rem);
+    z-index: 40;
+    transform: translate(-50%, 8px);
+    max-width: min(560px, calc(100vw - 2rem));
+    padding: 0.7rem 1.1rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: var(--step--1);
+    opacity: 0;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.toast[hidden] {
+    display: none;
+}
+
+.toast.is-up {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.toast.is-bad {
+    background: var(--accent);
+}
+
+.toast a {
+    color: inherit;
+}
+
+/* ═══════════════════════════════════════════════
+   NARROW
+   ═══════════════════════════════════════════════ */
+@media (max-width: 860px) {
+    .desk-body {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* The rail becomes a scrolling index above the cards. */
+    .rail {
+        position: static;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        overflow-x: auto;
+    }
+
+    .rail-head {
+        display: none;
+    }
+
+    .row {
+        grid-template-columns: 52px minmax(0, 1fr);
+    }
+
+    .row-thumb {
+        width: 52px;
+        height: 52px;
+    }
+
+    .row-tools {
+        grid-column: 1 / -1;
+        grid-auto-flow: column;
+        justify-content: start;
+    }
+
+    .docket-msg {
+        width: 100%;
+    }
+
+    .docket-actions {
+        width: 100%;
+    }
+
+    .docket-actions .btn {
+        flex: 1 1 auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
