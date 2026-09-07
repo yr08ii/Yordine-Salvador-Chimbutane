@@ -1,7 +1,7 @@
 {
   "_readme": "Media manifest for the site. Edited through /admin/ — hand edits are fine too, but keep the shape. Prose lives in index.html; only media lives here.",
   "version": 1,
-  "updated": "2026-09-07T03:47:20Z",
+  "updated": "2026-09-07T13:40:22Z",
   "resume": {
     "path": "assets/Yordine-Chimbutane-Resume.pdf",
     "label": "Résumé",
@@ -199,40 +199,7 @@
       "files": {
         "label": "Production files",
         "folder": "assets/Projects/FIRST/production",
-        "items": [
-          {
-            "file": "assets/Projects/FIRST/production/chassis-drawing.pdf",
-            "kind": "pdf",
-            "title": "Chassis and drivetrain drawing",
-            "ext": "PDF",
-            "label": "CAD drawing",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
-          },
-          {
-            "file": "assets/Projects/FIRST/production/lift-assembly.png",
-            "kind": "image",
-            "title": "Chain-driven vertical lift assembly",
-            "ext": "PNG",
-            "label": "CAD render",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
-          },
-          {
-            "file": "assets/Projects/FIRST/production/intake-geometry.png",
-            "kind": "image",
-            "title": "Compliant-wheel intake geometry",
-            "ext": "PNG",
-            "label": "CAD render",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
-          },
-          {
-            "file": "assets/Projects/FIRST/production/engineering-notebook.pdf",
-            "kind": "pdf",
-            "title": "Build-season engineering notebook",
-            "ext": "PDF",
-            "label": "Notebook",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
-          }
-        ]
+        "items": []
       }
     }
   ],
@@ -246,28 +213,36 @@
         "folder": "assets/experiences/payment-cards-group",
         "items": [
           {
-            "file": "assets/experiences/payment-cards-group/team.jpg",
-            "kind": "image",
-            "title": "With the Payment Cards Group team",
-            "ext": "JPG",
-            "label": "Photograph",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
-          },
-          {
-            "file": "assets/experiences/payment-cards-group/compliance-pipeline.pdf",
+            "file": "assets/experiences/payment-cards-group/compliance-pipeline-showcase.pdf",
             "kind": "pdf",
-            "title": "Compliance pipeline — design note",
+            "title": "Compliance Pipeline Showcase",
             "ext": "PDF",
             "label": "Document",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+            "note": "The single biggest milestone during this period was developing a closed-loop compliance pipeline in 6 weeks! Features a series of scheduled statistical tests which transform thousands of transaction data points into valuable insights which can be used by human complaints to make informed decisions about merchants. To what extent does this relate to engineering? Engineers are problem solvers. Whether I am building an underwater robot or presented with a compliance efficiency problem, I will work my best to develop an elegant and resource efficient solution to this issue."
           },
           {
-            "file": "assets/experiences/payment-cards-group/card-app-screens.png",
+            "file": "assets/experiences/payment-cards-group/img-6878.jpg",
             "kind": "image",
-            "title": "Card management app — screens",
-            "ext": "PNG",
-            "label": "Screens",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+            "title": "Internship Completion Certificate",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": ""
+          },
+          {
+            "file": "assets/experiences/payment-cards-group/img-6875.jpg",
+            "kind": "image",
+            "title": "Presentation of my Projects to the Leadership Board",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": ""
+          },
+          {
+            "file": "assets/experiences/payment-cards-group/bbpay-terminal-ui-redesign-report-pdf-7169.pdf",
+            "kind": "pdf",
+            "title": "Terminal Redesign Spec",
+            "ext": "PDF",
+            "label": "Document",
+            "note": ""
           }
         ]
       }
@@ -410,36 +385,20 @@
         "folder": "assets/experiences/belutecnica",
         "items": [
           {
-            "file": "assets/experiences/belutecnica/autocad-drawing.pdf",
-            "kind": "pdf",
-            "title": "Structural layout — AutoCAD drawing",
-            "ext": "PDF",
-            "label": "CAD drawing",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
-          },
-          {
-            "file": "assets/experiences/belutecnica/shop-floor.jpg",
+            "file": "assets/experiences/belutecnica/engineerchimbutane2.jpeg",
             "kind": "image",
-            "title": "On the shop floor in Boane",
+            "title": "Working in the workshop.",
             "ext": "JPG",
             "label": "Photograph",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+            "note": "Cutting a metal plate using an angle grinder."
           },
           {
-            "file": "assets/experiences/belutecnica/risk-assessment.pdf",
-            "kind": "pdf",
-            "title": "Project risk assessment",
-            "ext": "PDF",
-            "label": "Document",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
-          },
-          {
-            "file": "assets/experiences/belutecnica/reference-letter.pdf",
-            "kind": "pdf",
-            "title": "Reference letter",
-            "ext": "PDF",
-            "label": "Reference letter",
-            "note": "Placeholder — replace this with a sentence or two about the file. It is what shows underneath when someone opens it."
+            "file": "assets/experiences/belutecnica/engineerchimbutane.jpg",
+            "kind": "image",
+            "title": "Picture with Principal Engineer and CEO.",
+            "ext": "JPG",
+            "label": "Photograph",
+            "note": "I hold this picture very dearly because these two leaders marked the beginning of my journey as an engineer. They didn't teach me a lot of technical things, I was only 16 at the time I took this internship position, but it was under their leadership that I began to turn the raw knowledge from school into engineering products."
           }
         ]
       }
