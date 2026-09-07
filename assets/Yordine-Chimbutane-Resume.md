@@ -45,7 +45,7 @@ Mechanical engineering undergraduate at PolyU, on the intelligent robotics strea
 
 ## PROFESSIONAL EXPERIENCE
 
-**Payment Cards Group** — Hong Kong SAR · Jun 2026 – Sep 2026
+**Payment Cards Group** — Hong Kong SAR · Jul 2026 – Aug 2026
 *IT Summer Intern*
 
 - Built the backend and frontend of a closed-loop compliance pipeline for transaction monitoring.
@@ -107,7 +107,10 @@ FIXED
   - Typos: "Bouyancy" -> Buoyancy, "Ulaanbatar" -> Ulaanbaatar,
     "EASY EDA" -> EasyEDA, "Linear Systems of Control" -> Linear Systems and
     Control (check the exact PolyU course title on your transcript).
-  - PCG dates were "Jun 2026 – September 2026" (mixed format) -> "Jun 2026 – Sep 2026".
+  - PCG dates: now "Jul 2026 – Aug 2026", taken from the internship
+    completion letter, which states 15 Jul 2026 to 31 Aug 2026. Earlier
+    drafts said Jun – Sep. CONFIRM: if you really started in June, this
+    and the Experience entry on the site both need putting back.
   - Section headings were inconsistently capitalised; now uniform.
 
 COURSEWORK CORRECTED AGAINST THE STUDY PLAN (25106126D_Study_Plan.docx)
