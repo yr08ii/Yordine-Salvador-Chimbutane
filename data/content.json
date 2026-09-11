@@ -1,7 +1,7 @@
 {
   "_readme": "Media manifest for the site. Edited through /admin/ — hand edits are fine too, but keep the shape. Prose lives in index.html; only media lives here.",
   "version": 1,
-  "updated": "2026-09-07T13:40:22Z",
+  "updated": "2026-09-11T03:26:02Z",
   "resume": {
     "path": "assets/Yordine-Chimbutane-Resume.pdf",
     "label": "Résumé",
@@ -212,6 +212,14 @@
         "label": "Documents & photographs",
         "folder": "assets/experiences/payment-cards-group",
         "items": [
+          {
+            "file": "assets/experiences/payment-cards-group/reference-letter-tommy-lam.pdf",
+            "kind": "pdf",
+            "title": "reference letter tommy lam",
+            "ext": "PDF",
+            "label": "Document",
+            "note": ""
+          },
           {
             "file": "assets/experiences/payment-cards-group/compliance-pipeline-showcase.pdf",
             "kind": "pdf",
